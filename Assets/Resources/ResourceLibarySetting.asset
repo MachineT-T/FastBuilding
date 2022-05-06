@@ -1,0 +1,511 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1538880525, guid: 445676ea598c9b24190e9344ca197fbf, type: 3}
+  m_Name: ResourceLibarySetting
+  m_EditorClassIdentifier: 
+  texture2ds:
+  - m_Name: resourcesImg
+    m_ResourcePath: Textures/resourcesImg
+    m_Type: Texture2D
+    m_AssetPath: Assets/Resources/Textures/resourcesImg.jpg
+    m_ExistStatus: 3
+  sprites:
+  - m_Name: resourcesImg
+    m_ResourcePath: Textures/resourcesImg:0
+    m_Type: Sprite
+    m_AssetPath: Assets/Resources/Textures/resourcesImg.jpg:0
+    m_ExistStatus: 3
+  textAssets:
+  - m_Name: UIPrefabConfig
+    m_ResourcePath: Config/UIPrefabConfig
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/UIPrefabConfig.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.05
+    m_ResourcePath: Config/Bone/Bone_article_0.05
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.05.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.07
+    m_ResourcePath: Config/Bone/Bone_article_0.07
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.07.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.1
+    m_ResourcePath: Config/Bone/Bone_article_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.13
+    m_ResourcePath: Config/Bone/Bone_article_0.13
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.13.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.15
+    m_ResourcePath: Config/Bone/Bone_article_0.15
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.15.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.16
+    m_ResourcePath: Config/Bone/Bone_article_0.16
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.16.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.18
+    m_ResourcePath: Config/Bone/Bone_article_0.18
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.18.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.2
+    m_ResourcePath: Config/Bone/Bone_article_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.25
+    m_ResourcePath: Config/Bone/Bone_article_0.25
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.25.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.3
+    m_ResourcePath: Config/Bone/Bone_article_0.3
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.3.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_0.5
+    m_ResourcePath: Config/Bone/Bone_article_0.5
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_0.5.json
+    m_ExistStatus: 2
+  - m_Name: Bone_article_1
+    m_ResourcePath: Config/Bone/Bone_article_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_article_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_BiLi
+    m_ResourcePath: Config/Bone/Bone_BiLi
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_BiLi.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.05
+    m_ResourcePath: Config/Bone/Bone_building_0.05
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.05.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.07
+    m_ResourcePath: Config/Bone/Bone_building_0.07
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.07.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.1
+    m_ResourcePath: Config/Bone/Bone_building_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.13
+    m_ResourcePath: Config/Bone/Bone_building_0.13
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.13.json
+    m_ExistStatus: 2
+  - m_Name: bone_building_0.15
+    m_ResourcePath: Config/Bone/bone_building_0.15
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/bone_building_0.15.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.16
+    m_ResourcePath: Config/Bone/Bone_building_0.16
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.16.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.18
+    m_ResourcePath: Config/Bone/Bone_building_0.18
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.18.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.2
+    m_ResourcePath: Config/Bone/Bone_building_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.2.json
+    m_ExistStatus: 2
+  - m_Name: bone_building_0.3
+    m_ResourcePath: Config/Bone/bone_building_0.3
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/bone_building_0.3.json
+    m_ExistStatus: 2
+  - m_Name: bone_building_0.4
+    m_ResourcePath: Config/Bone/bone_building_0.4
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/bone_building_0.4.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_0.6
+    m_ResourcePath: Config/Bone/Bone_building_0.6
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_0.6.json
+    m_ExistStatus: 2
+  - m_Name: Bone_building_1
+    m_ResourcePath: Config/Bone/Bone_building_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_building_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_character_0.05
+    m_ResourcePath: Config/Bone/Bone_character_0.05
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_character_0.05.json
+    m_ExistStatus: 2
+  - m_Name: Bone_character_0.1
+    m_ResourcePath: Config/Bone/Bone_character_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_character_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_character_0.2
+    m_ResourcePath: Config/Bone/Bone_character_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_character_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_character_0.3
+    m_ResourcePath: Config/Bone/Bone_character_0.3
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_character_0.3.json
+    m_ExistStatus: 2
+  - m_Name: Bone_character_0.5
+    m_ResourcePath: Config/Bone/Bone_character_0.5
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_character_0.5.json
+    m_ExistStatus: 2
+  - m_Name: Bone_character_1
+    m_ResourcePath: Config/Bone/Bone_character_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_character_1.json
+    m_ExistStatus: 2
+  - m_Name: bone_ColliderSK_Empty
+    m_ResourcePath: Config/Bone/bone_ColliderSK_Empty
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/bone_ColliderSK_Empty.json
+    m_ExistStatus: 2
+  - m_Name: bone_CubeSK_Empty
+    m_ResourcePath: Config/Bone/bone_CubeSK_Empty
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/bone_CubeSK_Empty.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Dinosaur
+    m_ResourcePath: Config/Bone/Bone_Dinosaur
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Dinosaur.json
+    m_ExistStatus: 2
+  - m_Name: bone_Dog
+    m_ResourcePath: Config/Bone/bone_Dog
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/bone_Dog.json
+    m_ExistStatus: 2
+  - m_Name: bone_Empty
+    m_ResourcePath: Config/Bone/bone_Empty
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/bone_Empty.json
+    m_ExistStatus: 2
+  - m_Name: Bone_food_0.05
+    m_ResourcePath: Config/Bone/Bone_food_0.05
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_food_0.05.json
+    m_ExistStatus: 2
+  - m_Name: Bone_food_0.1
+    m_ResourcePath: Config/Bone/Bone_food_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_food_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_food_0.2
+    m_ResourcePath: Config/Bone/Bone_food_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_food_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_food_1
+    m_ResourcePath: Config/Bone/Bone_food_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_food_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_func_0.1
+    m_ResourcePath: Config/Bone/Bone_func_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_func_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_func_0.2
+    m_ResourcePath: Config/Bone/Bone_func_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_func_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_func_1
+    m_ResourcePath: Config/Bone/Bone_func_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_func_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_0.05
+    m_ResourcePath: Config/Bone/Bone_Furniture_0.05
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_0.05.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_0.07
+    m_ResourcePath: Config/Bone/Bone_Furniture_0.07
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_0.07.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_0.1
+    m_ResourcePath: Config/Bone/Bone_Furniture_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_0.13
+    m_ResourcePath: Config/Bone/Bone_Furniture_0.13
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_0.13.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_0.16
+    m_ResourcePath: Config/Bone/Bone_Furniture_0.16
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_0.16.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_0.18
+    m_ResourcePath: Config/Bone/Bone_Furniture_0.18
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_0.18.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_0.2
+    m_ResourcePath: Config/Bone/Bone_Furniture_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Furniture_1
+    m_ResourcePath: Config/Bone/Bone_Furniture_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Furniture_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_General
+    m_ResourcePath: Config/Bone/Bone_General
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_General.json
+    m_ExistStatus: 2
+  - m_Name: Bone_General_0.1
+    m_ResourcePath: Config/Bone/Bone_General_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_General_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_JIQIREN
+    m_ResourcePath: Config/Bone/Bone_JIQIREN
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_JIQIREN.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Mecha_0.2
+    m_ResourcePath: Config/Bone/Bone_Mecha_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Mecha_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Ninja_0.1
+    m_ResourcePath: Config/Bone/Bone_Ninja_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Ninja_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_None
+    m_ResourcePath: Config/Bone/Bone_None
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_None.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Orcs_0.2
+    m_ResourcePath: Config/Bone/Bone_Orcs_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Orcs_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.05
+    m_ResourcePath: Config/Bone/Bone_other_0.05
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.05.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.07
+    m_ResourcePath: Config/Bone/Bone_other_0.07
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.07.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.1
+    m_ResourcePath: Config/Bone/Bone_other_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.13
+    m_ResourcePath: Config/Bone/Bone_other_0.13
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.13.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.16
+    m_ResourcePath: Config/Bone/Bone_other_0.16
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.16.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.18
+    m_ResourcePath: Config/Bone/Bone_other_0.18
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.18.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.2
+    m_ResourcePath: Config/Bone/Bone_other_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.3
+    m_ResourcePath: Config/Bone/Bone_other_0.3
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.3.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.4
+    m_ResourcePath: Config/Bone/Bone_other_0.4
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.4.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_0.6
+    m_ResourcePath: Config/Bone/Bone_other_0.6
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_0.6.json
+    m_ExistStatus: 2
+  - m_Name: Bone_other_1
+    m_ResourcePath: Config/Bone/Bone_other_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_other_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.05
+    m_ResourcePath: Config/Bone/Bone_plant_0.05
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.05.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.07
+    m_ResourcePath: Config/Bone/Bone_plant_0.07
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.07.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.1
+    m_ResourcePath: Config/Bone/Bone_plant_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.13
+    m_ResourcePath: Config/Bone/Bone_plant_0.13
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.13.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.16
+    m_ResourcePath: Config/Bone/Bone_plant_0.16
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.16.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.18
+    m_ResourcePath: Config/Bone/Bone_plant_0.18
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.18.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.2
+    m_ResourcePath: Config/Bone/Bone_plant_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_0.3
+    m_ResourcePath: Config/Bone/Bone_plant_0.3
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_0.3.json
+    m_ExistStatus: 2
+  - m_Name: Bone_plant_1
+    m_ResourcePath: Config/Bone/Bone_plant_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_plant_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_roles_0.1
+    m_ResourcePath: Config/Bone/Bone_roles_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_roles_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_roles_0.2
+    m_ResourcePath: Config/Bone/Bone_roles_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_roles_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_roles_0.3
+    m_ResourcePath: Config/Bone/Bone_roles_0.3
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_roles_0.3.json
+    m_ExistStatus: 2
+  - m_Name: Bone_roles_0.5
+    m_ResourcePath: Config/Bone/Bone_roles_0.5
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_roles_0.5.json
+    m_ExistStatus: 2
+  - m_Name: Bone_roles_0.7
+    m_ResourcePath: Config/Bone/Bone_roles_0.7
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_roles_0.7.json
+    m_ExistStatus: 2
+  - m_Name: Bone_roles_1
+    m_ResourcePath: Config/Bone/Bone_roles_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_roles_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_Spirit_0.1
+    m_ResourcePath: Config/Bone/Bone_Spirit_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_Spirit_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_traffic_0.1
+    m_ResourcePath: Config/Bone/Bone_traffic_0.1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_traffic_0.1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_traffic_0.2
+    m_ResourcePath: Config/Bone/Bone_traffic_0.2
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_traffic_0.2.json
+    m_ExistStatus: 2
+  - m_Name: Bone_traffic_0.3
+    m_ResourcePath: Config/Bone/Bone_traffic_0.3
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_traffic_0.3.json
+    m_ExistStatus: 2
+  - m_Name: Bone_traffic_1
+    m_ResourcePath: Config/Bone/Bone_traffic_1
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_traffic_1.json
+    m_ExistStatus: 2
+  - m_Name: Bone_ZJ_AnNiu
+    m_ResourcePath: Config/Bone/Bone_ZJ_AnNiu
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_ZJ_AnNiu.json
+    m_ExistStatus: 2
+  - m_Name: Bone_ZJ_Men
+    m_ResourcePath: Config/Bone/Bone_ZJ_Men
+    m_Type: TextAsset
+    m_AssetPath: Assets/Resources/Config/Bone/Bone_ZJ_Men.json
+    m_ExistStatus: 2
+  audios: []
+  videos: []
+  renderTextures: []
+  materials: []
+  prefabs:
+  - m_Name: Canvas
+    m_ResourcePath: UIPerafbs/Canvas
+    m_Type: GameObject
+    m_AssetPath: Assets/Resources/UIPerafbs/Canvas.prefab
+    m_ExistStatus: 2
+  - m_Name: TestCanvas
+    m_ResourcePath: UIPerafbs/TestCanvas
+    m_Type: GameObject
+    m_AssetPath: Assets/Resources/UIPerafbs/TestCanvas.prefab
+    m_ExistStatus: 2
+  - m_Name: TestView
+    m_ResourcePath: UIPerafbs/TestView
+    m_Type: GameObject
+    m_AssetPath: Assets/Resources/UIPerafbs/TestView.prefab
+    m_ExistStatus: 2
+  movieTextures: []
+  fonts: []
+  scriptableObjects: []
+  runtimeAnimatorControllers: []

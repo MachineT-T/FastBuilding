@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: mat_Boli2
+  m_Shader: {fileID: 4800000, guid: 102ae67d75d24bf49b90cba8fedb7360, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cubemap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 2800000, guid: 68f81cd710d21a041844354f3f41b8b2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexAssetMAsk:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Ambientlight: 8
+    - _AoIntensity: 1
+    - _BlurReflection: 0
+    - _Contrast: 1
+    - _Cutoff: 0.5
+    - _DesaturateAlbedo: 0
+    - _EmissiveIntensity: 0
+    - _FresnelInvert: 0
+    - _FresnelOnOff: 0
+    - _FresnelStrength: 8
+    - _FresnelThickness: 0
+    - _Gloss: 0.5
+    - _Glossiness: 2
+    - _Invertmask: 0
+    - _MaskAmount: 0.5
+    - _NormalIntensity: 2
+    - _ReflectionIntensity: 1
+    - _Refraction: 0
+    - _SpecIntensity: 0.6
+    - _SpecularIntensity: 2
+    - _Transparency: 0.607
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorGlass: {r: 1, g: 0.52205884, b: 0.52205884, a: 1}
+    - _Diffusecolor: {r: 1, g: 0.8014706, b: 0.82200813, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Speccolor: {r: 0, g: 0, b: 0, a: 1}

@@ -1,0 +1,34 @@
+{
+  "UIPrefabInfo": [
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "defalutCanvas",
+      "UIFormClassName": "Frame.View.UICanvas",
+      "UIFormPrefabName": "Canvas"
+    },
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "TestForm",
+      "UIFormClassName": "Frame.View.TestForm",
+      "UIFormPrefabName": "TestForm"
+    },
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "TestForm2",
+      "UIFormClassName": "Frame.View.TestForm2",
+      "UIFormPrefabName": "TestForm2"
+    },
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "TestForm3",
+      "UIFormClassName": "Frame.View.TestForm3",
+      "UIFormPrefabName": "TestForm3"
+    },
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "TestForm4",
+      "UIFormClassName": "Frame.View.TestForm4",
+      "UIFormPrefabName": "TestForm4"
+    }
+  ]
+}

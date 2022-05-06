@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2038488119, guid: 445676ea598c9b24190e9344ca197fbf, type: 3}
+  m_Name: StreamingAssetLibarySetting
+  m_EditorClassIdentifier: 
+  texture2ds:
+  - m_Name: streamingAssetsImg
+    m_Type: Texture2D
+    m_Path: streamingAssetsImg.jpg
+    m_ExistStatus: 2
+  sprites:
+  - m_Name: streamingAssetsImg
+    m_Type: Sprite
+    m_Path: streamingAssetsImg.jpg
+    m_ExistStatus: 3
+  textAssets: []
+  audios: []
+  videos: []

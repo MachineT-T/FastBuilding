@@ -1,0 +1,22 @@
+{
+  "UIPrefabInfo": [
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "defalutCanvas",
+      "UIFormClassName": "Frame.View.UICanvas",
+      "UIFormPrefabName": "Canvas"
+    },
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "TestCanvas",
+      "UIFormClassName": "TestCanvas",
+      "UIFormPrefabName": "TestCanvas"
+    },
+    {
+      "UIFormLuaScript": false,
+      "UIFormName": "TestView",
+      "UIFormClassName": "TestView",
+      "UIFormPrefabName": "TestView"
+    }
+  ]
+}

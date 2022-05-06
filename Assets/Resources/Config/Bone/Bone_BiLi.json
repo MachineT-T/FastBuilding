@@ -1,0 +1,174 @@
+{
+  "unit": 1.0,
+  "Name": "Bone_BiLi",
+  "BoneScale": {
+    "x": 0.06,
+    "y": 0.06,
+    "z": 0.06
+  },
+  "SkeletonAnims": [ "Idle", "Fall", "Hinder", "Jump", "Knock", "Place", "Recovery", "Walk" ],
+  "DefaultModels": [],
+  "BoneNodeList": [
+    {
+      "mNodeName": "Head",
+      "mNodePos": {
+        "x": 3.176414224981272e-7,
+        "y": 8.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": 0.00000762939453125,
+        "y": 6.91856552676343e-18,
+        "z": 5.1957542435143699e-11
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "mNodeName": "L_Feet",
+      "mNodePos": {
+        "x": -1.9999996423721314,
+        "y": 0.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": -0.0000152587890625,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "mNodeName": "L_hand1",
+      "mNodePos": {
+        "x": -4.999999523162842,
+        "y": 6.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": -0.0002593994140625,
+        "y": -0.0000340042024618015,
+        "z": -6.21202093474514e-18
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "mNodeName": "L_hand2",
+      "mNodePos": {
+        "x": -4.999999523162842,
+        "y": 3.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": 0.00012969970703125,
+        "y": -0.0000337707497237716,
+        "z": 0.0
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "mNodeName": "R_Feet",
+      "mNodePos": {
+        "x": 2.000000238418579,
+        "y": 0.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": 0.00002288818359375,
+        "y": -0.00000333755474457575,
+        "z": 3.9561012243893909e-9
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "mNodeName": "R_hand1",
+      "mNodePos": {
+        "x": 5.000000476837158,
+        "y": 6.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": 0.00012969970703125,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "mNodeName": "R_hand2",
+      "mNodePos": {
+        "x": 5.000000476837158,
+        "y": 3.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": 0.00000762939453125,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "mNodeName": "Trunk",
+      "mNodePos": {
+        "x": 3.176414224981272e-7,
+        "y": 2.5,
+        "z": 0.0
+      },
+      "mNodeRot": {
+        "x": 0.00000762939453125,
+        "y": 6.7762635780344005e-21,
+        "z": 5.08888754974322e-14
+      },
+      "mDisPlay": true,
+      "mat_ID": "mat_ys_40",
+      "mModelPoint": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ],
+  "DefaultCubes": []
+}

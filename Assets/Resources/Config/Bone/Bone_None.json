@@ -1,0 +1,50 @@
+{
+    "unit": 1,
+    "Name": "Bone_None",
+    "BoneScale": {
+        "x": 0.1,
+        "y": 0.1,
+        "z": 0.1
+    },
+    "SkeletonAnims": [],
+    "DefaultModels": [],
+    "BoneNodeList": [
+        {
+            "mNodeName": "Hip",
+            "mNodePos": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "mNodeRot": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "mDisPlay": false,
+            "mat_ID": "",
+            "mModelPoint": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            }
+        }
+    ],
+    "DefaultCubes": [
+        {
+            "mNodeName": "(0, 0.5, 0)",
+            "mNodePos": {
+                "x": 0,
+                "y": 0.5,
+                "z": 0
+            },
+            "mNodeRot": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "mat_ID": "mat_cz_07",
+            "parent_ID": "Hip"
+        }
+    ]
+}

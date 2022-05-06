@@ -1,0 +1,1 @@
+{"unit":1.0,"Name":"Bone_ZJ_Men","BoneScale":{"x":0.1,"y":0.1,"z":0.1},"SkeletonAnims":["ZJ_Men_Kai","ZJ_Men_Guan"],"DefaultModels":[],"BoneNodeList":[{"mNodeName":"Hip","mNodePos":{"x":4.5,"y":5.5,"z":0.0},"mNodeRot":{"x":0.0,"y":0.0,"z":0.0},"mDisPlay":false,"mat_ID":"","mModelPoint":{"x":0.0,"y":0.0,"z":0.0}}],"DefaultCubes":[]}
