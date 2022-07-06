@@ -21,7 +21,9 @@ public class Initialization : MonoBehaviour
         {
             for (int j = 0; j < wide; ++j)
             {
+                //将GameObject转换为Cube
                 ground[i, j] = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                //设置Cube的位置
                 ground[i, j].transform.position = new Vector3(i, 1, j);
             }
         }

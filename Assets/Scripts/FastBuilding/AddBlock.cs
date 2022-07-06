@@ -11,6 +11,8 @@ public class AddBlock : MonoBehaviour
     float StartTime;
     //保存抬起右键的时间
     float EndTime;
+    //获取SelectBlock用于放下方块后选中刚放下的方块
+    public GameObject SelectBlock;
 
     //放下方块
     void PutDownBlock()
@@ -56,8 +58,8 @@ public class AddBlock : MonoBehaviour
             }
             obj.transform.position = NewPos;
         }
-
-
+        //选择方块
+        SelectBlock.GetComponent<SelectBlock>().SelectAdding(obj.transform);
     }
 
     // Start is called before the first frame update

@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\FastBuilding\Initialization.cs" />
      <Compile Include="Assets\Frame\View\UIType.cs" />
      <Compile Include="Assets\Scripts\Test\TestMediator.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\AddBlock.cs" />
      <Compile Include="Assets\Scripts\Tools\DisplayConfig.cs" />
      <Compile Include="Assets\Frame\Ctrl\MediatorManager.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\ChunkConfig.cs" />
@@ -79,11 +80,12 @@
      <Compile Include="Assets\Scripts\AssetBehavior\CodeColliderManager.cs" />
      <Compile Include="Assets\Frame\TestForm2.cs" />
      <Compile Include="Assets\Frame\View\UILuaTool.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\SelectBlock.cs" />
      <Compile Include="Assets\Scripts\Tools\MonoSingleton.cs" />
      <Compile Include="Assets\Frame\View\BaseGraphic.cs" />
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\AddBlock.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\IsInUI.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
