@@ -25,6 +25,8 @@ public class Initialization : MonoBehaviour
                 ground[i, j] = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 //设置Cube的位置
                 ground[i, j].transform.position = new Vector3(i, 1, j);
+                //为地面设置标签防止被删除
+                ground[i, j].tag = "Ground";
             }
         }
     }

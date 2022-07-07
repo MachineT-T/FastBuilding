@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Test\TestCanvas.cs" />
      <Compile Include="Assets\Scripts\Tools\ZipHelper.cs" />
      <Compile Include="Assets\Frame\Model\ParamObject.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\IsInUI.cs" />
      <Compile Include="Assets\Frame\View\UIFactory.cs" />
      <Compile Include="Assets\Scripts\Test\Test.cs" />
      <Compile Include="Assets\Frame\View\UIBase.cs" />
@@ -85,7 +86,7 @@
      <Compile Include="Assets\Frame\View\BaseGraphic.cs" />
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\IsInUI.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\ShowBoxCollider.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

@@ -10,14 +10,12 @@ public class IsInUI : MonoBehaviour
     public void InUI()
     {
         SelectBlock.GetComponent<SelectBlock>().IsInUI = true;
-        Debug.Log("enterUI");
     }
 
     //鼠标离开按钮
     public void OutUI()
     {
         SelectBlock.GetComponent<SelectBlock>().IsInUI = false;
-        Debug.Log("exitUI");
     }
     // Start is called before the first frame update
     void Start()
