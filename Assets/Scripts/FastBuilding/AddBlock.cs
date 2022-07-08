@@ -30,6 +30,7 @@ public class AddBlock : MonoBehaviour
         {
             float TransformX = hit.transform.position.x, TransformY = hit.transform.position.y, TransformZ = hit.transform.position.z;
             float PointX = hit.point.x, PointY = hit.point.y, PointZ = hit.point.z;
+            Debug.Log("TransformX=" + TransformX + " TransformY=" + TransformY + " TransformZ=" + TransformZ + " PointX=" + PointX + " PointY=" + PointY + " PointZ=" + PointX);
             //判断碰撞点在碰撞物体的哪个方向并设置新方块的位置
             Vector3 NewPos = hit.transform.position;
             if (PointX == TransformX + 0.5)
@@ -55,6 +56,11 @@ public class AddBlock : MonoBehaviour
             else if (PointZ == TransformZ - 0.5)
             {
                 NewPos.z--;
+            }
+            else//碰撞点是plane
+            {
+                Debug.Log("hit the ground");
+                NewPos += hit.normal * 0.5f;
             }
             obj.transform.position = NewPos;
         }

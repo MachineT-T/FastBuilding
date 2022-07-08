@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Tools\DisplayConfig.cs" />
      <Compile Include="Assets\Frame\Ctrl\MediatorManager.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\ChunkConfig.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\ShowBoxCollider.cs" />
      <Compile Include="Assets\Frame\TestForm4.cs" />
      <Compile Include="Assets\Scripts\Tools\FileTool.cs" />
      <Compile Include="Assets\Frame\View\InternalUIManager.cs" />
@@ -86,7 +87,7 @@
      <Compile Include="Assets\Frame\View\BaseGraphic.cs" />
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\ShowBoxCollider.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\ShowGroundCollider.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
