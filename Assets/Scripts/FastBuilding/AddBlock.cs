@@ -15,55 +15,21 @@ public class AddBlock : MonoBehaviour
     public GameObject SelectBlock;
 
     //放下方块
-    void PutDownBlock()
+    void PutDownBlock(Vector3 pos)
     {
         //创建新方块
-        GameObject obj = new GameObject();
+        GameObject obj;
         obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
         //设置方块材质
         obj.GetComponent<Renderer>().material = mat;
 
-        //射线检测
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-        {
-            float TransformX = hit.transform.position.x, TransformY = hit.transform.position.y, TransformZ = hit.transform.position.z;
-            float PointX = hit.point.x, PointY = hit.point.y, PointZ = hit.point.z;
-            Debug.Log("TransformX=" + TransformX + " TransformY=" + TransformY + " TransformZ=" + TransformZ + " PointX=" + PointX + " PointY=" + PointY + " PointZ=" + PointX);
-            //判断碰撞点在碰撞物体的哪个方向并设置新方块的位置
-            Vector3 NewPos = hit.transform.position;
-            if (PointX == TransformX + 0.5)
-            {
-                NewPos.x++;
-            }
-            else if (PointX == TransformX - 0.5)
-            {
-                NewPos.x--;
-            }
-            else if (PointY == TransformY + 0.5)
-            {
-                NewPos.y++;
-            }
-            else if (PointY == TransformY - 0.5)
-            {
-                NewPos.y--;
-            }
-            else if (PointZ == TransformZ + 0.5)
-            {
-                NewPos.z++;
-            }
-            else if (PointZ == TransformZ - 0.5)
-            {
-                NewPos.z--;
-            }
-            else//碰撞点是plane
-            {
-                Debug.Log("hit the ground");
-                NewPos += hit.normal * 0.5f;
-            }
-            obj.transform.position = NewPos;
-        }
+        //设置方块位置
+        obj.transform.position = pos;
+
+        //将创建方块的信息传递给Scene
+        Scene.setBlocks(obj);
+
         //选择方块
         SelectBlock.GetComponent<SelectBlock>().SelectAdding(obj.transform);
     }
@@ -89,8 +55,47 @@ public class AddBlock : MonoBehaviour
             //如果按下右键时间间隔小于0.2秒则判定为点击
             if (EndTime - StartTime < 0.2f)
             {
-                //放下方块
-                PutDownBlock();
+                //射线检测
+                RaycastHit hit;
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+                {
+                    float TransformX = hit.transform.position.x, TransformY = hit.transform.position.y, TransformZ = hit.transform.position.z;
+                    float PointX = hit.point.x, PointY = hit.point.y, PointZ = hit.point.z;
+                    Debug.Log("TransformX=" + TransformX + " TransformY=" + TransformY + " TransformZ=" + TransformZ + " PointX=" + PointX + " PointY=" + PointY + " PointZ=" + PointX);
+                    //判断碰撞点在碰撞物体的哪个方向并设置新方块的位置
+                    Vector3 NewPos = hit.transform.position;
+                    if (PointX == TransformX + 0.5)
+                    {
+                        NewPos.x++;
+                    }
+                    else if (PointX == TransformX - 0.5)
+                    {
+                        NewPos.x--;
+                    }
+                    else if (PointY == TransformY + 0.5)
+                    {
+                        NewPos.y++;
+                    }
+                    else if (PointY == TransformY - 0.5)
+                    {
+                        NewPos.y--;
+                    }
+                    else if (PointZ == TransformZ + 0.5)
+                    {
+                        NewPos.z++;
+                    }
+                    else if (PointZ == TransformZ - 0.5)
+                    {
+                        NewPos.z--;
+                    }
+                    else//碰撞点是plane
+                    {
+                        Debug.Log("hit the ground");
+                        NewPos += hit.normal * 0.5f;
+                    }
+                    //放下方块
+                    PutDownBlock(NewPos);
+                }
             }
         }
     }

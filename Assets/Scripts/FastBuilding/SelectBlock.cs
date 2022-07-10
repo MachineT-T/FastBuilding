@@ -15,6 +15,11 @@ public class SelectBlock : MonoBehaviour
     //保存抬起左键的时间
     float EndTime;
 
+    //保存左键按下时的射线检测信息
+    RaycastHit StartHit;
+    //保存左线松开时的射线检测信息
+    RaycastHit EndHit;
+
     //选中方块
     void Select()
     {

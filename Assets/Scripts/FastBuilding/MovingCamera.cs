@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingCamera : MonoBehaviour
 {
-    private int MouseWheelSensitivity = 5; //滚轮灵敏度设置
+    private int MouseWheelSensitivity = 20; //滚轮灵敏度设置
 
     private float xSpeed = 250.0f; //旋转视角时相机x轴转速
     private float ySpeed = 120.0f; //旋转视角时相机y轴转速

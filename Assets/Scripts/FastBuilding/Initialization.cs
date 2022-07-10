@@ -10,7 +10,7 @@ public class Initialization : MonoBehaviour
     public Material mat;//地面材质
     void Start()
     {
-        Camera.main.transform.position = new Vector3(0, 0, -wide * 1.5f);//将相机放置在地面的中间位置
+        Camera.main.transform.position = new Vector3(length / 2, height / 2, -wide * 1.5f);//将相机放置在场景的中间位置
 
         //调整相机角度使相机向下面对地面
         // float EulerX = Camera.main.transform.eulerAngles.x;
@@ -28,7 +28,7 @@ public class Initialization : MonoBehaviour
                 //设置Plane的大小
                 down[i, j].transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 //设置Plane的位置
-                down[i, j].transform.position = new Vector3(i - length / 2, -height / 2, j - wide / 2);
+                down[i, j].transform.position = new Vector3(i, -0.5f, j);
                 //为地面设置标签防止被删除
                 down[i, j].tag = "Ground";
                 //设置地面材质
@@ -47,7 +47,7 @@ public class Initialization : MonoBehaviour
                 //设置Plane的大小
                 up[i, j].transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 //设置Plane的位置
-                up[i, j].transform.position = new Vector3(i - length / 2, height / 2, j - wide / 2);
+                up[i, j].transform.position = new Vector3(i, height - 0.5f, j);
                 //设置Plane的旋转角度
                 up[i, j].transform.rotation = Quaternion.Euler(180, 0, 0);
                 //为地面设置标签防止被删除
@@ -68,7 +68,7 @@ public class Initialization : MonoBehaviour
                 //设置Plane的大小
                 front[i, j].transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 //设置Plane的位置
-                front[i, j].transform.position = new Vector3(i - length / 2, j - height / 2 + 0.5f, length / 2 - 0.5f);
+                front[i, j].transform.position = new Vector3(i, j, length - 0.5f);
                 //设置Plane的旋转角度
                 front[i, j].transform.rotation = Quaternion.Euler(-90, 0, 0);
                 //为地面设置标签防止被删除
@@ -89,7 +89,7 @@ public class Initialization : MonoBehaviour
                 //设置Plane的大小
                 back[i, j].transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 //设置Plane的位置
-                back[i, j].transform.position = new Vector3(i - length / 2, j - height / 2 + 0.5f, -length / 2 - 0.5f);
+                back[i, j].transform.position = new Vector3(i, j, -0.5f);
                 //设置Plane的旋转角度
                 back[i, j].transform.rotation = Quaternion.Euler(90, 0, 0);
                 //为地面设置标签防止被删除
@@ -110,7 +110,7 @@ public class Initialization : MonoBehaviour
                 //设置Plane的大小
                 left[i, j].transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 //设置Plane的位置
-                left[i, j].transform.position = new Vector3(-length / 2 - 0.5f, i - height / 2 + 0.5f, j - length / 2);
+                left[i, j].transform.position = new Vector3(-0.5f, i, j);
                 //设置Plane的旋转角度
                 left[i, j].transform.rotation = Quaternion.Euler(0, 0, -90);
                 //为地面设置标签防止被删除
@@ -131,7 +131,7 @@ public class Initialization : MonoBehaviour
                 //设置Plane的大小
                 right[i, j].transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 //设置Plane的位置
-                right[i, j].transform.position = new Vector3(length / 2 - 0.5f, i - height / 2 + 0.5f, j - length / 2);
+                right[i, j].transform.position = new Vector3(length - 0.5f, i, j);
                 //设置Plane的旋转角度
                 right[i, j].transform.rotation = Quaternion.Euler(0, 0, 90);
                 //为地面设置标签防止被删除
