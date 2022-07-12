@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 131950830}
   - component: {fileID: 131950829}
   m_Layer: 0
-  m_Name: BuildingMode
+  m_Name: RectangleMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,7 +408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 140677695}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToRectangleMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &140677695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,8 +476,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -480,8 +492,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -654,7 +666,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 215041976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToPyramidMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &215041976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,8 +734,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -726,8 +750,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -920,8 +944,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -936,8 +960,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -1031,7 +1055,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 258037095}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToSphereMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &258037095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,8 +1123,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -1103,8 +1139,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -1115,6 +1151,49 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &274349008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 274349010}
+  - component: {fileID: 274349009}
+  m_Layer: 0
+  m_Name: SelectMode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &274349009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274349008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451912d8061cc2648a39df8b1d36c281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &274349010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274349008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.017776, y: -4.5678163, z: 6.723302}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294886497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,8 +1385,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -1322,8 +1401,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -1789,8 +1868,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -1805,8 +1884,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -2722,8 +2801,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -2738,8 +2817,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -2968,8 +3047,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -2984,8 +3063,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -3226,8 +3305,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -3242,8 +3321,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -3311,8 +3390,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -3327,8 +3406,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -3478,8 +3557,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -3494,8 +3573,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -3645,8 +3724,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -3661,8 +3740,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -3756,7 +3835,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1344795241}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToSubSelectMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1344795241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3812,8 +3903,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -3828,8 +3919,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -4042,7 +4133,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1446168744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToLineMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1446168744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4098,8 +4201,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -4114,8 +4217,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -4209,7 +4312,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1534596620}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToAddSelectMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1534596620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4265,8 +4380,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -4281,8 +4396,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -4600,7 +4715,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635179784}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToCylinderMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1635179784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4656,8 +4783,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -4672,8 +4799,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -4878,8 +5005,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -4894,8 +5021,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -5107,7 +5234,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1878081119}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 556778566}
+        m_TargetAssemblyTypeName: Scene, Assembly-CSharp
+        m_MethodName: ToSelectMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1878081119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5163,8 +5302,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -5179,8 +5318,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -5464,8 +5603,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -5480,8 +5619,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -5761,8 +5900,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -5777,8 +5916,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -6556,8 +6695,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -6572,8 +6711,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -6850,8 +6989,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -6866,8 +7005,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -6930,8 +7069,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -6946,8 +7085,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -7010,8 +7149,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -7026,8 +7165,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:
@@ -7125,8 +7264,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: InUI
           m_Mode: 1
           m_Arguments:
@@ -7141,8 +7280,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IsInUI, Assembly-CSharp
+        - m_Target: {fileID: 556778566}
+          m_TargetAssemblyTypeName: Scene, Assembly-CSharp
           m_MethodName: OutUI
           m_Mode: 1
           m_Arguments:

@@ -12,13 +12,13 @@ public class Scene : MonoBehaviour
     static bool[,,] HavingBlocks;
 
     //模式类型
-    public enum Mode { build, select };
+    public enum Mode { rectangle, sphere, line, cylinder, pyramid, select, AddSelect, SubSelect };
 
     //当前模式
-    public static Mode mode = Mode.build;
+    public static Mode mode = Mode.rectangle;
 
     //鼠标是否在UI中
-    static bool IsInUI;
+    static bool IsInUI = false;
 
     //获取场景方块信息的引用
     public static GameObject[,,] getBlocks()
@@ -48,6 +48,60 @@ public class Scene : MonoBehaviour
     public static void OutUI()
     {
         IsInUI = false;
+    }
+
+    //判断鼠标是否在UI按钮内
+    public static bool TestUI()
+    {
+        return IsInUI;
+    }
+
+    //转换为矩形搭建模式
+    public static void ToRectangleMode()
+    {
+        mode = Mode.rectangle;
+    }
+
+    //转换为球形搭建模式
+    public static void ToSphereMode()
+    {
+        mode = Mode.sphere;
+    }
+
+    //转换为线性搭建模式
+    public static void ToLineMode()
+    {
+        mode = Mode.line;
+    }
+
+    //转换为圆柱搭建模式
+    public static void ToCylinderMode()
+    {
+        mode = Mode.cylinder;
+    }
+
+    //转换为金字塔搭建模式
+    public static void ToPyramidMode()
+    {
+        mode = Mode.pyramid;
+    }
+
+    //转换为常规选择模式
+    public static void ToSelectMode()
+    {
+        mode = Mode.select;
+    }
+
+    //转换为加选模式
+    public static void ToAddSelectMode()
+    {
+        mode = Mode.AddSelect;
+    }
+
+    //转换为减选模式
+    public static void ToSubSelectMode()
+    {
+        mode = Mode.SubSelect;
     }
 
     // Start is called before the first frame update
