@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b4e755eb908934db68b6fe95824d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: e1d90cc3eb8524c42bd26ef110b11b93, type: 2}
+  mat: {fileID: 2100000, guid: c8e159609985a53439b5d68420f0861a, type: 2}
 --- !u!4 &131950830
 Transform:
   m_ObjectHideFlags: 0
@@ -1812,7 +1812,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 403985583}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 232040390}
+        m_TargetAssemblyTypeName: SelectBlock, Assembly-CSharp
+        m_MethodName: SelectAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &403985583
 MonoBehaviour:
   m_ObjectHideFlags: 0

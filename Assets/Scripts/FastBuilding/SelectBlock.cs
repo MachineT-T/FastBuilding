@@ -24,6 +24,33 @@ public class SelectBlock : MonoBehaviour
         selected.Clear();
     }
 
+    //全选
+    public static void SelectAll()
+    {
+        //获取场景中的方块信息
+        GameObject[,,] blocks = Scene.getBlocks();
+        //先清空选择列表
+        ClearSelected();
+        //将场景中所有方块添加进选择列表中
+        for (int i = 0; i < Scene.length; i++)
+        {
+            for (int j = 0; j < Scene.height; j++)
+            {
+                for (int k = 0; k < Scene.wide; k++)
+                {
+                    if (Scene.TestBlocks(i, j, k))
+                    {
+                        //将方块添加进选择列表中
+                        selected.Add(blocks[i, j, k]);
+                        //为选中的方块画线
+                        blocks[i, j, k].AddComponent<ShowBoxCollider>();
+                    }
+                }
+            }
+        }
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

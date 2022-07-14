@@ -23,8 +23,8 @@ public class SelectMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //判断是否为常规选择模式并且鼠标不在UI按钮上
-        if (Scene.mode != Scene.Mode.select || Scene.TestUI())
+        //判断是否为选择模式并且鼠标不在UI按钮上
+        if ((Scene.mode != Scene.Mode.select && Scene.mode != Scene.Mode.AddSelect && Scene.mode != Scene.Mode.SubSelect) || Scene.TestUI())
         {
             return;
         }
@@ -73,8 +73,11 @@ public class SelectMode : MonoBehaviour
                 int z1 = (int)Mathf.Min(StartPos.z, EndPos.z);
                 int z2 = (int)Mathf.Max(StartPos.z, EndPos.z);
 
-                //清空选择的方块数组
-                SelectBlock.ClearSelected();
+                //如果为常规选择模式则每次选择都要清空选择的方块数组
+                if (Scene.mode == Scene.Mode.select)
+                {
+                    SelectBlock.ClearSelected();
+                }
                 //获取选中的方块列表的引用
                 ArrayList selected = SelectBlock.getSelected();
                 //获取场景中的方块信息
@@ -86,13 +89,37 @@ public class SelectMode : MonoBehaviour
                     {
                         for (int k = z1; k <= z2; ++k)
                         {
-                            //如果该位置有方块则将该位置的方块加入选择方块列表
-                            if (Scene.TestBlocks(i, j, k))
+                            //在常规选择模式或加选模式下，如果该位置有方块且不在选择方块列表中则将该位置的方块加入选择方块列表
+                            if (Scene.mode == Scene.Mode.select || Scene.mode == Scene.Mode.AddSelect)
                             {
-                                //将方块添加进选择列表中
-                                selected.Add(blocks[i, j, k]);
-                                //为选中的方块画线
-                                blocks[i, j, k].AddComponent<ShowBoxCollider>();
+                                //判断在该位置是否有方块
+                                if (Scene.TestBlocks(i, j, k))
+                                {
+                                    //判断方块是否已在选择列表中
+                                    if (!selected.Contains(blocks[i, j, k]))
+                                    {
+                                        //将方块添加进选择列表中
+                                        selected.Add(blocks[i, j, k]);
+                                        //为选中的方块画线
+                                        blocks[i, j, k].AddComponent<ShowBoxCollider>();
+                                    }
+                                }
+                            }
+                            //在减选模式下，如果该位置有方块且在方块列表中则将该方块从选择列表中移除
+                            else if (Scene.mode == Scene.Mode.SubSelect)
+                            {
+                                //判断在该位置是否有方块
+                                if (Scene.TestBlocks(i, j, k))
+                                {
+                                    //判断方块是否已在选择列表中
+                                    if (selected.Contains(blocks[i, j, k]))
+                                    {
+                                        //去除该方块的画线
+                                        Destroy(blocks[i, j, k].GetComponent("ShowBoxCollider"));
+                                        //将方块从选择列表中移除
+                                        selected.Remove(blocks[i, j, k]);
+                                    }
+                                }
                             }
                         }
                     }
