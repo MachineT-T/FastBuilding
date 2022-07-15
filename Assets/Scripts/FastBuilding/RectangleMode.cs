@@ -75,6 +75,8 @@ public class RectangleMode : MonoBehaviour
             //先标记两次射线检测无效使旧信息无效化
             IsStartHit = false;
             IsEndHit = false;
+            //清空选择列表
+            SelectBlock.ClearSelected();
             //射线检测
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
@@ -96,11 +98,7 @@ public class RectangleMode : MonoBehaviour
                 //标记结束射线检测有效
                 IsEndHit = true;
             }
-        }
 
-        //左键松开时，如果两个射线检测结果都有效则将范围内未放置方块的位置放置对应方块并选中放置的所有方块
-        if (Input.GetMouseButtonUp(0))
-        {
             //判断两次射线检测信息是否有效
             if (IsStartHit && IsEndHit)
             {
@@ -113,8 +111,9 @@ public class RectangleMode : MonoBehaviour
                 int z1 = (int)Mathf.Min(StartPos.z, EndPos.z);
                 int z2 = (int)Mathf.Max(StartPos.z, EndPos.z);
 
-                //清空选择的方块数组
-                SelectBlock.ClearSelected();
+
+                //每帧都先删除原本渲染的方块并重新渲染
+                SelectBlock.DeleteSelected();
                 //获取选中的方块列表的引用
                 ArrayList selected = SelectBlock.getSelected();
                 //获取场景中的方块信息
@@ -142,13 +141,27 @@ public class RectangleMode : MonoBehaviour
                                 selected.Add(obj);
                                 //为选中的方块画线
                                 obj.AddComponent<ShowBoxCollider>();
+                                //将方块设置为不能被射线检测
+                                obj.layer = 2;
                             }
                         }
                     }
                 }
-                //使用完射线检测信息后将射线检测信息无效化
-                IsStartHit = false;
-                IsEndHit = false;
+
+            }
+        }
+
+        //使用完射线检测信息后将射线检测信息无效化并将方块设置为可被射线检测
+        if (Input.GetMouseButtonUp(0))
+        {
+            IsStartHit = false;
+            IsEndHit = false;
+            //获取选中的方块列表的引用
+            ArrayList selected = SelectBlock.getSelected();
+            for (int i = 0; i < selected.Count; ++i)
+            {
+                GameObject obj = (GameObject)selected[i];
+                obj.layer = 0;
             }
         }
     }
