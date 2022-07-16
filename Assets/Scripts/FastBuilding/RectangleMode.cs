@@ -75,8 +75,6 @@ public class RectangleMode : MonoBehaviour
             //先标记两次射线检测无效使旧信息无效化
             IsStartHit = false;
             IsEndHit = false;
-            //清空选择列表
-            SelectBlock.ClearSelected();
             //射线检测
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
@@ -84,6 +82,8 @@ public class RectangleMode : MonoBehaviour
                 StartHit = hit;
                 //标记开始射线检测有效
                 IsStartHit = true;
+                //清空选择列表
+                SelectBlock.ClearSelected();
             }
         }
 
@@ -147,7 +147,6 @@ public class RectangleMode : MonoBehaviour
                         }
                     }
                 }
-
             }
         }
 

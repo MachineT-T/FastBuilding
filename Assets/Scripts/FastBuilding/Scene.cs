@@ -104,6 +104,16 @@ public class Scene : MonoBehaviour
         mode = Mode.SubSelect;
     }
 
+    //判断方块是否在搭建范围内
+    public static bool TestPos(int x, int y, int z)
+    {
+        if (0 <= x && x < length && 0 <= y && y < height && 0 <= z && z < wide)
+        {
+            return true;
+        }
+        return false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
