@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\AssetBehavior\FileAssetLoad.cs" />
      <Compile Include="Assets\Scripts\Tools\DisplayIconMgr.cs" />
      <Compile Include="Assets\Frame\View\UICanvas.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\SphereMode.cs" />
      <Compile Include="Assets\Frame\TestForm3.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\CompConfig.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\CodeColliderManager.cs" />
@@ -93,7 +94,7 @@
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\ShowGroundCollider.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\SphereMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\LineMode.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

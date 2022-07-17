@@ -63,7 +63,7 @@ public class RectangleMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //判断是否为搭建模式并且鼠标不在UI按钮上
+        //判断是否为矩形模式并且鼠标不在UI按钮上
         if (Scene.mode != Scene.Mode.rectangle || Scene.TestUI())
         {
             return;
@@ -125,24 +125,28 @@ public class RectangleMode : MonoBehaviour
                     {
                         for (int k = z1; k <= z2; ++k)
                         {
-                            //如果该位置没有方块则将该位置加入选择区域并添加方块
-                            if (!Scene.TestBlocks(i, j, k))
+                            //判断该方块在搭建范围内
+                            if (Scene.TestPos(i, j, k))
                             {
-                                //创建方块对象
-                                GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                                //设置方块材质
-                                obj.GetComponent<Renderer>().material = mat;
-                                //设置方块位置
-                                obj.transform.position = new Vector3(i, j, k);
-                                //将方块添加进方块信息中
-                                blocks[i, j, k] = obj;
-                                Scene.setBlocks(i, j, k, true);
-                                //将方块添加进选择列表中
-                                selected.Add(obj);
-                                //为选中的方块画线
-                                obj.AddComponent<ShowBoxCollider>();
-                                //将方块设置为不能被射线检测
-                                obj.layer = 2;
+                                //如果该位置没有方块则将该位置加入选择区域并添加方块
+                                if (!Scene.TestBlocks(i, j, k))
+                                {
+                                    //创建方块对象
+                                    GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                                    //设置方块材质
+                                    obj.GetComponent<Renderer>().material = mat;
+                                    //设置方块位置
+                                    obj.transform.position = new Vector3(i, j, k);
+                                    //将方块添加进方块信息中
+                                    blocks[i, j, k] = obj;
+                                    Scene.setBlocks(i, j, k, true);
+                                    //将方块添加进选择列表中
+                                    selected.Add(obj);
+                                    //为选中的方块画线
+                                    obj.AddComponent<ShowBoxCollider>();
+                                    //将方块设置为不能被射线检测
+                                    obj.layer = 2;
+                                }
                             }
                         }
                     }

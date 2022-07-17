@@ -15,7 +15,7 @@ public class Scene : MonoBehaviour
     public enum Mode { rectangle, sphere, line, cylinder, pyramid, select, AddSelect, SubSelect };
 
     //当前模式
-    public static Mode mode = Mode.rectangle;
+    public static Mode mode = Mode.line;
 
     //鼠标是否在UI中
     static bool IsInUI = false;

@@ -116,7 +116,7 @@ public class SphereMode : MonoBehaviour
             if (hit.normal.x == 1.0f)
             {
                 x1 = (int)(KeyPoint.x);
-                x2 = (int)(KeyPoint.x + Mathf.Ceil(radius * 2));
+                x2 = (int)(KeyPoint.x + Mathf.Ceil(radius) * 2);
                 y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
                 y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
                 z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
@@ -124,7 +124,7 @@ public class SphereMode : MonoBehaviour
             }
             else if (hit.normal.x == -1.0f)
             {
-                x1 = (int)(KeyPoint.x - Mathf.Ceil(radius * 2));
+                x1 = (int)(KeyPoint.x - Mathf.Ceil(radius) * 2);
                 x2 = (int)(KeyPoint.x);
                 y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
                 y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
@@ -136,7 +136,7 @@ public class SphereMode : MonoBehaviour
                 x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
                 x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
                 y1 = (int)(KeyPoint.y);
-                y2 = (int)(KeyPoint.y + Mathf.Ceil(radius * 2));
+                y2 = (int)(KeyPoint.y + Mathf.Ceil(radius) * 2);
                 z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
                 z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
             }
@@ -144,7 +144,7 @@ public class SphereMode : MonoBehaviour
             {
                 x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
                 x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
-                y1 = (int)(KeyPoint.y - Mathf.Ceil(radius * 2));
+                y1 = (int)(KeyPoint.y - Mathf.Ceil(radius) * 2);
                 y2 = (int)(KeyPoint.y);
                 z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
                 z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
@@ -156,7 +156,7 @@ public class SphereMode : MonoBehaviour
                 y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
                 y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
                 z1 = (int)(KeyPoint.z);
-                z2 = (int)(KeyPoint.z + Mathf.Ceil(radius * 2));
+                z2 = (int)(KeyPoint.z + Mathf.Ceil(radius) * 2);
             }
             else if (hit.normal.z == -1.0f)
             {
@@ -164,7 +164,7 @@ public class SphereMode : MonoBehaviour
                 x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
                 y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
                 y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
-                z1 = (int)(KeyPoint.z - Mathf.Ceil(radius * 2));
+                z1 = (int)(KeyPoint.z - Mathf.Ceil(radius) * 2);
                 z2 = (int)(KeyPoint.z);
             }
             //求球心
