@@ -48,10 +48,6 @@ public class LineMode : BuildMode
 
             //每帧都先删除原本渲染的方块并重新渲染
             SelectBlock.DeleteSelected();
-            //获取选中的方块列表的引用
-            ArrayList selected = SelectBlock.getSelected();
-            //获取场景中的方块信息
-            GameObject[,,] blocks = Scene.getBlocks();
 
             //遍历直线上的点
             for (float x = Mathf.Min(StartPos.x, CurrentPos.x); x <= Mathf.Max(StartPos.x, CurrentPos.x); x++)

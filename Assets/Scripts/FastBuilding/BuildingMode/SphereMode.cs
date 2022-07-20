@@ -133,10 +133,6 @@ public class SphereMode : BuildMode
 
             //每帧都先删除原本渲染的方块并重新渲染
             SelectBlock.DeleteSelected();
-            //获取选中的方块列表的引用
-            ArrayList selected = SelectBlock.getSelected();
-            //获取场景中的方块信息
-            GameObject[,,] blocks = Scene.getBlocks();
 
             //遍历正方体范围内的所有方块
             for (int x = x1; x <= x2; x++)
