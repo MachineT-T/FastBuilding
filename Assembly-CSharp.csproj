@@ -36,7 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\FastBuilding\AddSelectMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\SelectingMode\AddSelectMode.cs" />
      <Compile Include="Assets\Frame\View\UIPrefabConfigInfo.cs" />
      <Compile Include="Assets\Scripts\Tools\IBehaviorHandle.cs" />
      <Compile Include="Assets\Scripts\Tools\GlobalCoroutineMgr.cs" />
@@ -62,16 +62,17 @@
      <Compile Include="Assets\Scripts\Test\TestMediator.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\AddBlock.cs" />
      <Compile Include="Assets\Scripts\Tools\DisplayConfig.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\SelectMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\SelectingMode\SelectMode.cs" />
      <Compile Include="Assets\Frame\Ctrl\MediatorManager.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\ChunkConfig.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\ShowBoxCollider.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowBoxCollider.cs" />
      <Compile Include="Assets\Frame\TestForm4.cs" />
      <Compile Include="Assets\Scripts\Tools\FileTool.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\LineMode.cs" />
      <Compile Include="Assets\Frame\View\InternalUIManager.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\RectangleMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\RectangleMode.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\TempSelect.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\SubSelectMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\SelectingMode\SubSelectMode.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Scene.cs" />
      <Compile Include="Assets\Frame\Ctrl\MediatorFactory.cs" />
      <Compile Include="Assets\Scripts\Tools\ObjectPoolMgr.cs" />
@@ -82,7 +83,7 @@
      <Compile Include="Assets\Scripts\AssetBehavior\FileAssetLoad.cs" />
      <Compile Include="Assets\Scripts\Tools\DisplayIconMgr.cs" />
      <Compile Include="Assets\Frame\View\UICanvas.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\SphereMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\SphereMode.cs" />
      <Compile Include="Assets\Frame\TestForm3.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\CompConfig.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\CodeColliderManager.cs" />
@@ -93,8 +94,8 @@
      <Compile Include="Assets\Frame\View\BaseGraphic.cs" />
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\ShowGroundCollider.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\LineMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowGroundCollider.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\BuildMode.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
