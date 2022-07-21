@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\FastBuilding\SelectingMode\SubSelectMode.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\BuildMode.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Scene.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\CylinderMode.cs" />
      <Compile Include="Assets\Frame\Ctrl\MediatorFactory.cs" />
      <Compile Include="Assets\Scripts\Tools\ObjectPoolMgr.cs" />
      <Compile Include="Assets\Scripts\UI\HideOrShowButton.cs" />
@@ -96,7 +97,7 @@
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowGroundCollider.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\CylinderMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\PyramidMode.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
