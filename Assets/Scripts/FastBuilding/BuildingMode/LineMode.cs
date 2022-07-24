@@ -25,7 +25,7 @@ public class LineMode : BuildMode
         碰撞到的位置放置方块*/
 
         //判断是否为线形模式并且鼠标不在UI按钮上
-        if (Scene.mode != Scene.Mode.line || Scene.TestUI())
+        if (Scene.mode != Scene.Mode.line || Scene.TestUI() || Scene.SelectingAxis)
         {
             return;
         }

@@ -24,7 +24,7 @@ public class SelectMode : MonoBehaviour
     void Update()
     {
         //判断是否为选择模式并且鼠标不在UI按钮上
-        if (Scene.mode != Scene.Mode.select || Scene.TestUI())
+        if (Scene.mode != Scene.Mode.select || Scene.TestUI() || Scene.SelectingAxis)
         {
             return;
         }

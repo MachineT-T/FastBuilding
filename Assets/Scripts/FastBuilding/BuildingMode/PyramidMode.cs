@@ -118,7 +118,7 @@ public class PyramidMode : BuildMode
     void Update()
     {
         //如果不是球形模式或者鼠标在UI按钮上，则直接返回
-        if (Scene.mode != Scene.Mode.pyramid || Scene.TestUI())
+        if (Scene.mode != Scene.Mode.pyramid || Scene.TestUI() || Scene.SelectingAxis)
         {
             return;
         }

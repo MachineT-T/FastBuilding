@@ -48,6 +48,27 @@ public class BuildMode : MonoBehaviour
     //尝试在(x,y,z)位置放置方块
     protected void build(int x, int y, int z)
     {
+        place(x, y, z);
+        //如果打开了X轴镜像模式
+        if (MirrorX.MirrorXMode)
+        {
+            place(MirrorX.GetPosX(x), y, z);
+        }
+        //如果打开了Y轴镜像模式
+        if (MirrorY.MirrorYMode)
+        {
+            place(x, MirrorY.GetPosY(y), z);
+        }
+        //如果打开了Z轴镜像模式
+        if (MirrorZ.MirrorZMode)
+        {
+            place(x, y, MirrorZ.GetPosZ(z));
+        }
+    }
+
+    //尝试在(x,y,z)位置放置方块
+    protected void place(int x, int y, int z)
+    {
         //获取选中的方块列表的引用
         ArrayList selected = SelectBlock.getSelected();
         //获取场景中的方块信息

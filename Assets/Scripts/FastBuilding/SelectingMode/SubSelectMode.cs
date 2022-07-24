@@ -24,7 +24,7 @@ public class SubSelectMode : MonoBehaviour
     void Update()
     {
         //判断是否为减选模式并且鼠标不在UI按钮上
-        if (Scene.mode != Scene.Mode.SubSelect || Scene.TestUI())
+        if (Scene.mode != Scene.Mode.SubSelect || Scene.TestUI() || Scene.SelectingAxis)
         {
             return;
         }

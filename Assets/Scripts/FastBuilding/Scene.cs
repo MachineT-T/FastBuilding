@@ -14,6 +14,9 @@ public class Scene : MonoBehaviour
     //模式类型
     public enum Mode { rectangle, sphere, line, cylinder, pyramid, select, AddSelect, SubSelect };
 
+    //判断是否在选定对称轴的状态
+    public static bool SelectingAxis = false;
+
     //当前模式
     public static Mode mode = Mode.pyramid;
 

@@ -24,7 +24,7 @@ public class RectangleMode : BuildMode
     void Update()
     {
         //判断是否为矩形模式并且鼠标不在UI按钮上
-        if (Scene.mode != Scene.Mode.rectangle || Scene.TestUI())
+        if (Scene.mode != Scene.Mode.rectangle || Scene.TestUI() || Scene.SelectingAxis)
         {
             return;
         }
