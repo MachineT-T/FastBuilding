@@ -46,6 +46,8 @@ public class SelectBlock : MonoBehaviour
     {
         //获取场景中的方块信息
         GameObject[,,] blocks = Scene.getBlocks();
+        //更换选择的方块时需要先确定选中方块的移动
+        MoveMode.ConfirmMoving();
         //先清空选择列表
         ClearSelected();
         //将场景中所有方块添加进选择列表中
@@ -65,6 +67,8 @@ public class SelectBlock : MonoBehaviour
                 }
             }
         }
+        //记录选中方块的初始位置
+        MoveMode.RecordBlockInitPos();
     }
 
     // Start is called before the first frame update

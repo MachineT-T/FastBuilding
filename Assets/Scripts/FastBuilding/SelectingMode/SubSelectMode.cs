@@ -55,6 +55,8 @@ public class SubSelectMode : MonoBehaviour
                 EndHit = hit;
                 //标记结束射线检测有效
                 IsEndHit = true;
+                //更换选择的方块时需要先确定选中方块的移动
+                MoveMode.ConfirmMoving();
             }
 
             //判断两次射线检测信息是否有效
@@ -117,6 +119,8 @@ public class SubSelectMode : MonoBehaviour
             }
             //清空暂时选择列表
             temp.Clear();
+            //记录选中方块的初始位置
+            MoveMode.RecordBlockInitPos();
         }
     }
 }

@@ -43,6 +43,8 @@ public class SphereMode : BuildMode
             flag = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
             if (flag)
             {
+                //更换选择的方块时需要先确定选中方块的移动
+                MoveMode.ConfirmMoving();
                 //清空选择列表
                 SelectBlock.ClearSelected();
                 KeyPoint = GetPos(hit);

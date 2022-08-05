@@ -109,6 +109,8 @@ public class BuildMode : MonoBehaviour
             GameObject obj = (GameObject)selected[i];
             obj.layer = 0;
         }
+        //为移动模式保存选中方块的初始位置
+        MoveMode.RecordBlockInitPos();
     }
 
     // Start is called before the first frame update

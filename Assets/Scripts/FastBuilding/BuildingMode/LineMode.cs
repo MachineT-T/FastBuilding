@@ -34,6 +34,8 @@ public class LineMode : BuildMode
         {
             //保存线段起点屏幕位置
             StartPos = Input.mousePosition;
+            //更换选择的方块时需要先确定选中方块的移动
+            MoveMode.ConfirmMoving();
             //清空选择列表
             SelectBlock.ClearSelected();
         }
@@ -53,7 +55,7 @@ public class LineMode : BuildMode
             for (float x = Mathf.Min(StartPos.x, CurrentPos.x); x <= Mathf.Max(StartPos.x, CurrentPos.x); x++)
             {
                 float y = k * x + b;
-                Vector3 ray = new Vector3(x, y, 0);
+                Vector3 ray = new Vector3(x, y, CurrentPos.z);
                 //射线检测
                 RaycastHit hit;
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(ray), out hit))
