@@ -45,24 +45,45 @@ public class LineMode : BuildMode
             //保存线段终点屏幕位置
             CurrentPos = Input.mousePosition;
 
-            //通过线段起点终点坐标计算直线方程
-            float k = (CurrentPos.y - StartPos.y) / (CurrentPos.x - StartPos.x), b = StartPos.y - k * StartPos.x;
-
-            //每帧都先删除原本渲染的方块并重新渲染
-            SelectBlock.DeleteSelected();
-
-            //遍历直线上的点
-            for (float x = Mathf.Min(StartPos.x, CurrentPos.x); x <= Mathf.Max(StartPos.x, CurrentPos.x); x++)
+            //判断线段不是垂直于x轴的特殊情况
+            if (CurrentPos.x != StartPos.x)
             {
-                float y = k * x + b;
-                Vector3 ray = new Vector3(x, y, CurrentPos.z);
-                //射线检测
-                RaycastHit hit;
-                if (Physics.Raycast(Camera.main.ScreenPointToRay(ray), out hit))
+                //通过线段起点终点坐标计算直线方程
+                float k = (CurrentPos.y - StartPos.y) / (CurrentPos.x - StartPos.x), b = StartPos.y - k * StartPos.x;
+
+                //每帧都先删除原本渲染的方块并重新渲染
+                SelectBlock.DeleteSelected();
+
+                //遍历直线上的点
+                for (float x = Mathf.Min(StartPos.x, CurrentPos.x); x <= Mathf.Max(StartPos.x, CurrentPos.x); x++)
                 {
-                    //获取碰撞方块位置
-                    Vector3 pos = GetPos(hit);
-                    build((int)pos.x, (int)pos.y, (int)pos.z);
+                    float y = k * x + b;
+                    Vector3 ray = new Vector3(x, y, 0);
+                    //射线检测
+                    RaycastHit hit;
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(ray), out hit))
+                    {
+                        //获取碰撞方块位置
+                        Vector3 pos = GetPos(hit);
+                        build((int)pos.x, (int)pos.y, (int)pos.z);
+                    }
+                }
+            }
+            else//垂直于x轴的特殊情况
+            {
+                float x = CurrentPos.x;
+                //遍历y
+                for (float y = Mathf.Min(StartPos.y, CurrentPos.y); y <= Mathf.Max(StartPos.y, CurrentPos.y); y++)
+                {
+                    Vector3 ray = new Vector3(x, y, 0);
+                    //射线检测
+                    RaycastHit hit;
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(ray), out hit))
+                    {
+                        //获取碰撞方块位置
+                        Vector3 pos = GetPos(hit);
+                        build((int)pos.x, (int)pos.y, (int)pos.z);
+                    }
                 }
             }
         }
