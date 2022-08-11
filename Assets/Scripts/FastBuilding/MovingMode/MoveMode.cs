@@ -23,7 +23,7 @@ public class MoveMode : MonoBehaviour
     //记录选中方块的当前位置
     static ArrayList BlockCurrentPos = new ArrayList();
     //鼠标移动距离与方块移动距离的换算比率
-    const float MoveDistanceRatio = 0.035f;
+    const float MoveDistanceRatio = 100.0f;
     //方块移动距离
     int MoveDistance;
     //用于获取选中方块列表的引用
@@ -165,13 +165,16 @@ public class MoveMode : MonoBehaviour
             //记录鼠标当前位置
             CurrentPos = Input.mousePosition;
             //将鼠标移动的屏幕坐标向量转换为世界坐标向量
-            Vector3 MouseMoveVector = Camera.main.ScreenToWorldPoint(new Vector3(CurrentPos.x, CurrentPos.y, Camera.main.transform.position.z))
-            - Camera.main.ScreenToWorldPoint(new Vector3(StartPos.x, StartPos.y, Camera.main.transform.position.z));
-            //计算物体移动距离
-            MoveDistance = (int)(Vector3.Distance(StartPos, CurrentPos) * MoveDistanceRatio);
+            // Vector3 MouseMoveVector = Camera.main.ScreenToWorldPoint(new Vector3(CurrentPos.x, CurrentPos.y, Camera.main.transform.position.z))
+            // - Camera.main.ScreenToWorldPoint(new Vector3(StartPos.x, StartPos.y, Camera.main.transform.position.z));
+            Vector3 MouseCurrentPos = Camera.main.ScreenToWorldPoint(new Vector3(CurrentPos.x, CurrentPos.y, Camera.main.nearClipPlane));
+            Vector3 MouseStartPos = Camera.main.ScreenToWorldPoint(new Vector3(StartPos.x, StartPos.y, Camera.main.nearClipPlane));
+            Vector3 MouseMoveVector = MouseCurrentPos - MouseStartPos;
+            //计算鼠标移动距离
+            MoveDistance = (int)(Vector3.Distance(StartPos, CurrentPos));
 
-            //如果鼠标移动的距离能使物体移动至少一单位则确定物体移动的方向
-            if (MoveDistance >= 1 && !DirectionFlag)
+            //如果鼠标移动的距离大于一定像素值则确定物体移动的方向
+            if (MoveDistance >= 30 && !DirectionFlag)
             {
                 //计算鼠标移动向量与三条坐标轴的角度
                 float AngleX = Mathf.Min(Vector3.Angle(MouseMoveVector, Vector3.left), Vector3.Angle(MouseMoveVector, Vector3.right));
@@ -204,31 +207,18 @@ public class MoveMode : MonoBehaviour
                 switch (direction)
                 {
                     case Direction.LeftAndRight:
-                        //如果向左移动则距离取反
-                        if (Vector3.Angle(MouseMoveVector, Vector3.left) < Vector3.Angle(MouseMoveVector, Vector3.right))
-                        {
-                            MoveDistance = -MoveDistance;
-                        }
-                        BlockMoveVector.x = MoveDistance;
+                        BlockMoveVector.x = (int)((MouseCurrentPos.x - MouseStartPos.x) * MoveDistanceRatio);
                         break;
                     case Direction.UpAndDown:
-                        //如果想下移动则距离取反
-                        if (Vector3.Angle(MouseMoveVector, Vector3.down) < Vector3.Angle(MouseMoveVector, Vector3.up))
-                        {
-                            MoveDistance = -MoveDistance;
-                        }
-                        BlockMoveVector.y = MoveDistance;
+                        BlockMoveVector.y = (int)((MouseCurrentPos.y - MouseStartPos.y) * MoveDistanceRatio);
                         break;
                     case Direction.ForwardAndBack:
-                        //如果向后移动则距离取反
-                        if (Vector3.Angle(MouseMoveVector, Vector3.back) < Vector3.Angle(MouseMoveVector, Vector3.forward))
-                        {
-                            MoveDistance = -MoveDistance;
-                        }
-                        BlockMoveVector.z = MoveDistance;
+                        BlockMoveVector.z = (int)((MouseCurrentPos.z - MouseStartPos.z) * MoveDistanceRatio);
                         break;
                 }
-
+                Debug.Log("MouseCurrentPos=" + MouseCurrentPos);
+                Debug.Log("MouseStartPos=" + MouseStartPos);
+                Debug.Log("BlockMoveVector=" + BlockMoveVector);
                 //通过移动向量求出物体当前位置
                 for (int i = 0; i < BlockStartPos.Count; i++)
                 {
