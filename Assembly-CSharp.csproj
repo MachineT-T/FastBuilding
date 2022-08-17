@@ -70,12 +70,14 @@
      <Compile Include="Assets\Scripts\AssetBehavior\ChunkConfig.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowBoxCollider.cs" />
      <Compile Include="Assets\Frame\TestForm4.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\MoveMode.cs" />
      <Compile Include="Assets\Scripts\Tools\FileTool.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\LineMode.cs" />
      <Compile Include="Assets\Frame\View\InternalUIManager.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\RectangleMode.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\TempSelect.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\SelectingMode\SubSelectMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\RotateX.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\BuildMode.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Scene.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\CylinderMode.cs" />
@@ -98,11 +100,13 @@
      <Compile Include="Assets\Scripts\FastBuilding\SelectBlock.cs" />
      <Compile Include="Assets\Scripts\Tools\MonoSingleton.cs" />
      <Compile Include="Assets\Frame\View\BaseGraphic.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\Rotate.cs" />
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Mirror\MirrorY.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowGroundCollider.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\MoveMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\RotateY.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\RotateZ.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
