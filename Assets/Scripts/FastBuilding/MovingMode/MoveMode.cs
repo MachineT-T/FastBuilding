@@ -216,9 +216,7 @@ public class MoveMode : MonoBehaviour
                         BlockMoveVector.z = (int)((MouseCurrentPos.z - MouseStartPos.z) * MoveDistanceRatio);
                         break;
                 }
-                Debug.Log("MouseCurrentPos=" + MouseCurrentPos);
-                Debug.Log("MouseStartPos=" + MouseStartPos);
-                Debug.Log("BlockMoveVector=" + BlockMoveVector);
+
                 //通过移动向量求出物体当前位置
                 for (int i = 0; i < BlockStartPos.Count; i++)
                 {
