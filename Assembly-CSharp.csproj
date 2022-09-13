@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\Tools\UnityTool.cs" />
      <Compile Include="Assets\Frame\View\UIMaskMgr.cs" />
      <Compile Include="Assets\Scripts\Test\TestView.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\MaterialPath.cs" />
      <Compile Include="Assets\Frame\Model\FMAction.cs" />
      <Compile Include="Assets\Frame\Ctrl\BaseMediator.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Mirror\MirrorOff.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Frame\View\UIBase.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\AssetDConfig.cs" />
      <Compile Include="Assets\Scripts\Tools\GlobalCoroutineBehavior.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\Copy.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\MovingCamera.cs" />
      <Compile Include="Assets\Scripts\EventListener.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\PyramidMode.cs" />
@@ -82,6 +84,7 @@
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\BuildMode.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Scene.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\CylinderMode.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\Import&amp;Export\Export.cs" />
      <Compile Include="Assets\Frame\Ctrl\MediatorFactory.cs" />
      <Compile Include="Assets\Scripts\Tools\ObjectPoolMgr.cs" />
      <Compile Include="Assets\Scripts\UI\HideOrShowButton.cs" />
@@ -105,9 +108,10 @@
      <Compile Include="Assets\Scripts\FastBuilding\MovingMode\Rotate.cs" />
      <Compile Include="Assets\Frame\TestForm.cs" />
      <Compile Include="Assets\Frame\View\UIManager.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\Import&amp;Export\SaveData.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Mirror\MirrorY.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowGroundCollider.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\MovingMode\Copy.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\Import&amp;Export\Import.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

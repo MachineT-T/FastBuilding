@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Scene : MonoBehaviour
 {
@@ -27,6 +28,60 @@ public class Scene : MonoBehaviour
     public static GameObject[,,] getBlocks()
     {
         return blocks;
+    }
+
+    //获取导出信息
+    public static SaveData getExportData()
+    {
+        SaveData ExportData = new SaveData(blocks, HavingBlocks);
+        return ExportData;
+    }
+
+    //导入数据
+    public static void ImportData(SaveData data)
+    {
+        //先删除场景当前数据
+        for (int i = 0; i < length; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                for (int k = 0; k < wide; k++)
+                {
+                    if (HavingBlocks[i, j, k])
+                    {
+                        Destroy(blocks[i, j, k]);
+                    }
+                }
+            }
+        }
+
+        //复现导入的数据信息
+        HavingBlocks = data.HavingBlocks;
+        for (int i = 0; i < length; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                for (int k = 0; k < wide; k++)
+                {
+                    if (HavingBlocks[i, j, k])
+                    {
+                        //创建方块对象
+                        GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        //设置方块材质
+                        Material mat = AssetDatabase.LoadAssetAtPath<Material>(data.BlocksMatPath[i, j, k]);
+                        obj.GetComponent<Renderer>().material = mat;
+                        //设置方块位置
+                        obj.transform.position = new Vector3(i, j, k);
+                        //将方块添加进方块信息中
+                        blocks[i, j, k] = obj;
+                        //为选中的方块挂载记录材质路径的脚本
+                        obj.AddComponent<MaterialPath>();
+                        //在脚本中保存材质路径
+                        obj.GetComponent<MaterialPath>().MatPath = data.BlocksMatPath[i, j, k];
+                    }
+                }
+            }
+        }
     }
 
     //判断对应位置上是否存在方块

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class BuildMode : MonoBehaviour
 {
@@ -93,6 +94,10 @@ public class BuildMode : MonoBehaviour
                 selected.Add(obj);
                 //为选中的方块画线
                 obj.AddComponent<ShowBoxCollider>();
+                //为选中的方块挂载记录材质路径的脚本
+                obj.AddComponent<MaterialPath>();
+                //在脚本中保存材质路径
+                obj.GetComponent<MaterialPath>().MatPath = AssetDatabase.GetAssetPath(mat);
                 //将方块设置为不能被射线检测
                 obj.layer = 2;
             }
