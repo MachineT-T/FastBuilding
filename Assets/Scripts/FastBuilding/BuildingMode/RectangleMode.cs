@@ -15,6 +15,9 @@ public class RectangleMode : BuildMode
     //保存左线松开时的射线检测信息
     RaycastHit EndHit;
 
+    //记录当前渲染出的立方体的范围
+    int NowX1, NowY1, NowZ1, NowX2, NowY2, NowZ2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,11 @@ public class RectangleMode : BuildMode
                 MoveMode.ConfirmMoving();
                 //清空选择列表
                 SelectBlock.ClearSelected();
+                //初始化当前渲染范围
+                Vector3 pos = GetPos(StartHit);
+                NowX1 = NowX2 = (int)pos.x;
+                NowY1 = NowY2 = (int)pos.y;
+                NowZ1 = NowZ2 = (int)pos.z;
             }
         }
 
@@ -76,18 +84,33 @@ public class RectangleMode : BuildMode
 
 
                 //每帧都先删除原本渲染的方块并重新渲染
-                SelectBlock.DeleteSelected();
+                // SelectBlock.DeleteSelected();
 
-                for (int i = x1; i <= x2; ++i)
+                for (int i = Mathf.Min(x1, NowX1); i <= Mathf.Max(x2, NowX2); ++i)
                 {
-                    for (int j = y1; j <= y2; ++j)
+                    for (int j = Mathf.Min(y1, NowY1); j <= Mathf.Max(y2, NowY2); ++j)
                     {
-                        for (int k = z1; k <= z2; ++k)
+                        for (int k = Mathf.Min(z1, NowZ1); k <= Mathf.Max(z2, NowZ2); ++k)
                         {
-                            build(i, j, k);
+                            //如果是当前碰撞检测范围则搭建否则取消搭建
+                            if (x1 <= i && i <= x2 && y1 <= j && j <= y2 && z1 <= k && k <= z2)
+                            {
+                                build(i, j, k);
+                            }
+                            else
+                            {
+                                CancelBuild(i, j, k);
+                            }
                         }
                     }
                 }
+                //修改当前渲染出的立方体范围
+                NowX1 = x1;
+                NowX2 = x2;
+                NowY1 = y1;
+                NowY2 = y2;
+                NowZ1 = z1;
+                NowZ2 = z2;
             }
         }
 
