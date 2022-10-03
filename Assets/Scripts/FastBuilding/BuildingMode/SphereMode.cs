@@ -18,6 +18,8 @@ public class SphereMode : BuildMode
     RaycastHit hit;
     //记录碰撞是否有效
     bool flag;
+    //记录当前渲染出的立方体的范围
+    int NowX1, NowY1, NowZ1, NowX2, NowY2, NowZ2;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,11 @@ public class SphereMode : BuildMode
                 //清空选择列表
                 SelectBlock.ClearSelected();
                 KeyPoint = GetPos(hit);
+                //初始化当前渲染范围
+                Vector3 pos = KeyPoint;
+                NowX1 = NowX2 = (int)pos.x;
+                NowY1 = NowY2 = (int)pos.y;
+                NowZ1 = NowZ2 = (int)pos.z;
             }
         }
 
@@ -134,22 +141,33 @@ public class SphereMode : BuildMode
             float x0 = o.x, y0 = o.y, z0 = o.z;
 
             //每帧都先删除原本渲染的方块并重新渲染
-            SelectBlock.DeleteSelected();
+            //SelectBlock.DeleteSelected();
 
             //遍历正方体范围内的所有方块
-            for (int x = x1; x <= x2; x++)
+            for (int x = Mathf.Min(x1, NowX1); x <= Mathf.Max(x2, NowX2); ++x)
             {
-                for (int y = y1; y <= y2; y++)
+                for (int y = Mathf.Min(y1, NowY1); y <= Mathf.Max(y2, NowY2); ++y)
                 {
-                    for (int z = z1; z <= z2; z++)
+                    for (int z = Mathf.Min(z1, NowZ1); z <= Mathf.Max(z2, NowZ2); ++z)
                     {
                         if (x * x - 2 * x0 * x + x0 * x0 + y * y - 2 * y0 * y + y0 * y0 + z * z - 2 * z0 * z + z0 * z0 - radius * radius <= 0)
                         {
                             build(x, y, z);
                         }
+                        else
+                        {
+                            CancelBuild(x, y, z);
+                        }
                     }
                 }
             }
+            //修改当前渲染出的立方体范围
+            NowX1 = x1;
+            NowX2 = x2;
+            NowY1 = y1;
+            NowY2 = y2;
+            NowZ1 = z1;
+            NowZ2 = z2;
         }
 
         //松开左键后确定选中的方块,重新设置方块为可被射线检测

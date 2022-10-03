@@ -5,9 +5,9 @@ using UnityEngine;
 public class PyramidMode : BuildMode
 {
     //鼠标在屏幕上移动距离和底面边长的换算比率
-    const float RadiusRatio = 0.02f;
+    const float RadiusRatio = 0.05f;
     //鼠标在屏幕上移动距离和金字塔高度的换算比率
-    const float HeightRatio = 0.02f;
+    const float HeightRatio = 0.05f;
     //底面边长
     float radius;
     //状态1中记录底面边长
@@ -31,13 +31,20 @@ public class PyramidMode : BuildMode
     状态0：按下左键选定金字塔底面中点，拖动控制底面边长，松开确定并进入状态1
     状态1：通过移动鼠标控制金字塔高度，点击左键确定高度*/
     bool state = false;
+    //记录当前渲染了的层数
+    int NowHeight;
 
     //生成一层
-    void BuildALayer()
+    void BuildOrRemoveALayer(bool BuildOrRemove)
     {
+        //记录需要遍历的范围
+        int BottomX1 = 0, BottomX2 = 0;
+        int BottomY1 = 0, BottomY2 = 0;
+        int BottomZ1 = 0, BottomZ2 = 0;
+
         /*遍历一个包围底面正方形范围的所有方块*/
         int x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
-        if (hit.normal.x == 1.0f)
+        if (hit.normal.x == 1.0f || hit.normal.x == -1.0f)
         {
             x1 = (int)(KeyPoint.x);
             x2 = (int)(KeyPoint.x);
@@ -45,17 +52,15 @@ public class PyramidMode : BuildMode
             y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
             z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
             z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
+
+            BottomX1 = x1;
+            BottomX2 = x2;
+            BottomY1 = (int)(KeyPoint.y - Mathf.Ceil(TempRadius));
+            BottomY2 = (int)(KeyPoint.y + Mathf.Ceil(TempRadius));
+            BottomZ1 = (int)(KeyPoint.z - Mathf.Ceil(TempRadius));
+            BottomZ2 = (int)(KeyPoint.z + Mathf.Ceil(TempRadius));
         }
-        else if (hit.normal.x == -1.0f)
-        {
-            x1 = (int)(KeyPoint.x);
-            x2 = (int)(KeyPoint.x);
-            y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
-            y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
-            z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
-            z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
-        }
-        else if (hit.normal.y == 1.0f)
+        else if (hit.normal.y == 1.0f || hit.normal.y == -1.0f)
         {
             x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
             x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
@@ -63,26 +68,15 @@ public class PyramidMode : BuildMode
             y2 = (int)(KeyPoint.y);
             z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
             z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
+
+            BottomX1 = (int)(KeyPoint.x - Mathf.Ceil(TempRadius));
+            BottomX2 = (int)(KeyPoint.x + Mathf.Ceil(TempRadius));
+            BottomY1 = y1;
+            BottomY2 = y2;
+            BottomZ1 = (int)(KeyPoint.z - Mathf.Ceil(TempRadius));
+            BottomZ2 = (int)(KeyPoint.z + Mathf.Ceil(TempRadius));
         }
-        else if (hit.normal.y == -1.0f)
-        {
-            x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
-            x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
-            y1 = (int)(KeyPoint.y);
-            y2 = (int)(KeyPoint.y);
-            z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
-            z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
-        }
-        else if (hit.normal.z == 1.0f)
-        {
-            x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
-            x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
-            y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
-            y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
-            z1 = (int)(KeyPoint.z);
-            z2 = (int)(KeyPoint.z);
-        }
-        else if (hit.normal.z == -1.0f)
+        else if (hit.normal.z == 1.0f || hit.normal.z == -1.0f)
         {
             x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
             x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
@@ -90,19 +84,30 @@ public class PyramidMode : BuildMode
             y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
             z1 = (int)(KeyPoint.z);
             z2 = (int)(KeyPoint.z);
+
+            BottomX1 = (int)(KeyPoint.x - Mathf.Ceil(TempRadius));
+            BottomX2 = (int)(KeyPoint.x + Mathf.Ceil(TempRadius));
+            BottomY1 = (int)(KeyPoint.y - Mathf.Ceil(TempRadius));
+            BottomY2 = (int)(KeyPoint.y + Mathf.Ceil(TempRadius));
+            BottomZ1 = z1;
+            BottomZ2 = z2;
         }
-        //求球心
-        Vector3 o = KeyPoint;
-        float x0 = o.x, y0 = o.y, z0 = o.z;
 
         //遍历正方体范围内的所有方块
-        for (int x = x1; x <= x2; x++)
+        for (int x = BottomX1; x <= BottomX2; x++)
         {
-            for (int y = y1; y <= y2; y++)
+            for (int y = BottomY1; y <= BottomY2; y++)
             {
-                for (int z = z1; z <= z2; z++)
+                for (int z = BottomZ1; z <= BottomZ2; z++)
                 {
-                    build(x, y, z);
+                    if (BuildOrRemove && x1 <= x && x <= x2 && y1 <= y && y <= y2 && z1 <= z && z <= z2)
+                    {
+                        build(x, y, z);
+                    }
+                    else
+                    {
+                        remove(x, y, z);
+                    }
                 }
             }
         }
@@ -157,11 +162,13 @@ public class PyramidMode : BuildMode
                     CurrentPos = Input.mousePosition;
                     //计算底面边长
                     radius = Vector3.Distance(CurrentPos, StartPos) * RadiusRatio;
+                    //记录底面边长
+                    TempRadius = radius;
 
                     //每帧都先删除原本渲染的方块并重新渲染
                     SelectBlock.DeleteSelected();
 
-                    BuildALayer();
+                    BuildOrRemoveALayer(true);
                 }
 
                 //松开左键后确定底面边长，转换状态
@@ -171,10 +178,10 @@ public class PyramidMode : BuildMode
                     StartPos = Input.mousePosition;
                     //记录底面中点
                     TempPoint = KeyPoint;
-                    //记录底面边长
-                    TempRadius = radius;
                     //转换状态
                     state = true;
+                    //记录当前渲染高度为0
+                    NowHeight = 0;
                 }
                 break;
 
@@ -187,18 +194,21 @@ public class PyramidMode : BuildMode
                 height = Vector3.Distance(CurrentPos, StartPos) * HeightRatio;
 
                 //每帧都先删除原本渲染的方块并重新渲染
-                SelectBlock.DeleteSelected();
+                //SelectBlock.DeleteSelected();
 
                 //将KeyPoint遍历每一层中点
                 KeyPoint = TempPoint;
                 //将radius遍历每一层的边长
                 radius = TempRadius;
-                for (int i = 0; i <= height + 1; i++)
+                for (int i = 0; i <= Mathf.Max(height + 1, NowHeight + 1); i++)
                 {
-                    BuildALayer();
+                    //如果i<=height则搭建一层，否则移除一层
+                    BuildOrRemoveALayer((bool)(i <= height + 1));
                     KeyPoint += hit.normal;
                     radius -= TempRadius / height;
                 }
+                //设置当前渲染层数
+                NowHeight = (int)height;
 
                 //点击左键后确定金字塔，转换回状态0
                 if (Input.GetMouseButtonUp(0))

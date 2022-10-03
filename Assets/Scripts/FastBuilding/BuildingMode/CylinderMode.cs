@@ -5,9 +5,9 @@ using UnityEngine;
 public class CylinderMode : BuildMode
 {
     //鼠标在屏幕上移动距离和球形半径的换算比率
-    const float RadiusRatio = 0.02f;
+    const float RadiusRatio = 0.05f;
     //鼠标在屏幕上移动距离和圆柱体高度的换算比率
-    const float HeightRatio = 0.02f;
+    const float HeightRatio = 0.05f;
     //球形的半径
     float radius;
     //圆柱体的高
@@ -29,15 +29,17 @@ public class CylinderMode : BuildMode
     状态0：按下左键选定圆柱底面圆心，拖动控制底面半径，松开确定并进入状态1
     状态1：通过移动鼠标控制圆柱高度，点击左键确定高度*/
     bool state = false;
+    //记录当前渲染了的层数
+    int NowHeight;
 
-    //生成一层
-    void BuildALayer()
+    //生成或移除一层
+    void BuildOrRemoveALayer(bool BuildOrRemove)
     {
         /*遍历一个包围底面圆形的正方形范围的所有方块
         对于每个范围内的方块，代入圆的方程判断是否符合
         若符合圆的方程则将该方块位置作为底面圆的组成方块之一*/
         int x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
-        if (hit.normal.x == 1.0f)
+        if (hit.normal.x == 1.0f || hit.normal.x == -1.0f)
         {
             x1 = (int)(KeyPoint.x);
             x2 = (int)(KeyPoint.x);
@@ -46,16 +48,7 @@ public class CylinderMode : BuildMode
             z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
             z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
         }
-        else if (hit.normal.x == -1.0f)
-        {
-            x1 = (int)(KeyPoint.x);
-            x2 = (int)(KeyPoint.x);
-            y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
-            y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
-            z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
-            z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
-        }
-        else if (hit.normal.y == 1.0f)
+        else if (hit.normal.y == 1.0f || hit.normal.y == -1.0f)
         {
             x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
             x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
@@ -64,16 +57,7 @@ public class CylinderMode : BuildMode
             z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
             z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
         }
-        else if (hit.normal.y == -1.0f)
-        {
-            x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
-            x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
-            y1 = (int)(KeyPoint.y);
-            y2 = (int)(KeyPoint.y);
-            z1 = (int)(KeyPoint.z - Mathf.Ceil(radius));
-            z2 = (int)(KeyPoint.z + Mathf.Ceil(radius));
-        }
-        else if (hit.normal.z == 1.0f)
+        else if (hit.normal.z == 1.0f || hit.normal.z == -1.0f)
         {
             x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
             x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
@@ -82,15 +66,7 @@ public class CylinderMode : BuildMode
             z1 = (int)(KeyPoint.z);
             z2 = (int)(KeyPoint.z);
         }
-        else if (hit.normal.z == -1.0f)
-        {
-            x1 = (int)(KeyPoint.x - Mathf.Ceil(radius));
-            x2 = (int)(KeyPoint.x + Mathf.Ceil(radius));
-            y1 = (int)(KeyPoint.y - Mathf.Ceil(radius));
-            y2 = (int)(KeyPoint.y + Mathf.Ceil(radius));
-            z1 = (int)(KeyPoint.z);
-            z2 = (int)(KeyPoint.z);
-        }
+
         //求球心
         Vector3 o = KeyPoint;
         float x0 = o.x, y0 = o.y, z0 = o.z;
@@ -104,7 +80,14 @@ public class CylinderMode : BuildMode
                 {
                     if (x * x - 2 * x0 * x + x0 * x0 + y * y - 2 * y0 * y + y0 * y0 + z * z - 2 * z0 * z + z0 * z0 - radius * radius <= 0)
                     {
-                        build(x, y, z);
+                        if (BuildOrRemove)
+                        {
+                            build(x, y, z);
+                        }
+                        else
+                        {
+                            remove(x, y, z);
+                        }
                     }
                 }
             }
@@ -164,7 +147,7 @@ public class CylinderMode : BuildMode
                     //每帧都先删除原本渲染的方块并重新渲染
                     SelectBlock.DeleteSelected();
 
-                    BuildALayer();
+                    BuildOrRemoveALayer(true);
                 }
 
                 //松开左键后确定圆柱体底面半径，转换状态
@@ -176,6 +159,8 @@ public class CylinderMode : BuildMode
                     TempPoint = KeyPoint;
                     //转换状态
                     state = true;
+                    //记录当前渲染高度为0
+                    NowHeight = 0;
                 }
                 break;
 
@@ -188,15 +173,18 @@ public class CylinderMode : BuildMode
                 height = Vector3.Distance(CurrentPos, StartPos) * HeightRatio;
 
                 //每帧都先删除原本渲染的方块并重新渲染
-                SelectBlock.DeleteSelected();
+                //SelectBlock.DeleteSelected();
 
                 //将KeyPoint遍历每一层中点
                 KeyPoint = TempPoint;
-                for (int i = 0; i <= height; i++)
+                for (int i = 0; i <= Mathf.Max(height, NowHeight); i++)
                 {
-                    BuildALayer();
+                    //如果i<=height则搭建一层，否则移除一层
+                    BuildOrRemoveALayer((bool)(i <= height));
                     KeyPoint += hit.normal;
                 }
+                //设置当前渲染层数
+                NowHeight = (int)height;
 
                 //点击左键后确定圆柱体，转换回状态0
                 if (Input.GetMouseButtonUp(0))
