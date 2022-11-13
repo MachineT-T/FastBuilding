@@ -23,10 +23,10 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
         _outputPath = _outputPath.Replace("///", "/");
         _outputPath = _outputPath.Replace("\\", "/");
         _outputPath = _outputPath.Replace("\\\\", "/");
-        assetCube = new AssetCubeConfig("", _outputPath + "/AssetData/ConfigCube");
-        assetComp = new AssetCompConfig("", _outputPath + "/AssetData/ConfigComp");
-        assetChunk = new AssetChunkConfig("", _outputPath + "/AssetData/ConfigChunk");
-        assetCollider = new AssetDConfig("", _outputPath + "/AssetData/ConfigCollider");
+        assetCube = new AssetCubeConfig("", _outputPath + "/ConfigCube");
+        assetComp = new AssetCompConfig("", _outputPath + "/ConfigComp");
+        assetChunk = new AssetChunkConfig("", _outputPath + "/ConfigChunk");
+        assetCollider = new AssetDConfig("", _outputPath + "/ConfigCollider");
         //fileAssetLoad.startRead();
     }
 
@@ -43,7 +43,6 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
         new DisplayConfig("MaterialDisplay").startRead();
         new AssetBoneConfig("BoneConfig").startRead();
         new DisplayConfig("BoneType").startRead();
-        
     }
 
 
@@ -71,7 +70,7 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
     {
         return LanguageMgr.Instance.getTranslationValue(mapName);
     }
-   
+
     /// <summary>
     /// 获取地图显示图标
     /// </summary>
@@ -109,7 +108,7 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
         return LanguageMgr.Instance.getTranslationValue(cubeName);
     }
 
-    
+
     /// <summary>
     /// 方块的显示图标
     /// </summary>
@@ -127,7 +126,7 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
     public CompAssetObj[] getCompList()
     {
         return assetComp.listValue();
-        
+
     }
     public string[] getCompNames()
     {
@@ -144,7 +143,7 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
         return LanguageMgr.Instance.getTranslationValue(compName);
     }
 
-    
+
 
     /// <summary>
     /// 组件的显示图标
@@ -157,7 +156,7 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
     }
 
 
-   
+
 
     /// <summary>
     /// 获取碰撞体列表
@@ -179,7 +178,7 @@ public class AssetLoadBehaviorManager : VR_ChuangKe.Share.AssetBehavior.Singleto
         return LanguageMgr.Instance.getTranslationValue(colliderName);
     }
 
-   
+
 
     /// <summary>
     /// 获取碰撞体显示图标

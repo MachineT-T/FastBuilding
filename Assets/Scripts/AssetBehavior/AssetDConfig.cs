@@ -202,7 +202,7 @@ namespace VR_ChuangKe.Share
                     ids.Add(name);
                     values.Add(new CubeAssetObj(name, type));
                     valueDic.Add(name, ids.Count);
-                }               
+                }
             }
             catch { }
         }
@@ -333,7 +333,7 @@ namespace VR_ChuangKe.Share
                     valueDic.Add(name, ids.Count);
                 }
             }
-            catch(System.Exception e) { Debug.LogError(e.Message+":"+e.StackTrace); }
+            catch (System.Exception e) { Debug.LogError(e.Message + ":" + e.StackTrace); }
         }
 
 

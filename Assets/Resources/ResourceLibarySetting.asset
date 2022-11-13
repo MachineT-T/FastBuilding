@@ -495,6 +495,11 @@ MonoBehaviour:
     m_Type: GameObject
     m_AssetPath: Assets/Resources/UIPerafbs/Canvas.prefab
     m_ExistStatus: 2
+  - m_Name: CubeSelectView
+    m_ResourcePath: UIPerafbs/CubeSelectView
+    m_Type: GameObject
+    m_AssetPath: Assets/Resources/UIPerafbs/CubeSelectView.prefab
+    m_ExistStatus: 2
   - m_Name: TestCanvas
     m_ResourcePath: UIPerafbs/TestCanvas
     m_Type: GameObject

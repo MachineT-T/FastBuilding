@@ -6,7 +6,13 @@ using UnityEditor;
 public class BuildMode : MonoBehaviour
 {
     //保存选择的材质
-    public Material mat;
+    public static Material mat;
+
+    //设置选择的材质
+    public static void setMat(Material m)
+    {
+        mat = m;
+    }
 
     //通过碰撞信息获取选择的位置
     protected Vector3 GetPos(RaycastHit hit)
@@ -49,6 +55,10 @@ public class BuildMode : MonoBehaviour
     //尝试在(x,y,z)位置放置方块
     protected void build(int x, int y, int z)
     {
+        if (mat == null)
+        {
+            return;
+        }
         place(x, y, z);
         //如果打开了X轴镜像模式
         if (MirrorX.MirrorXMode)

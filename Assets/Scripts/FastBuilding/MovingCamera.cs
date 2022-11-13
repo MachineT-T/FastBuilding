@@ -29,6 +29,11 @@ public class MovingCamera : MonoBehaviour
 
     void Update()
     {
+        //如果鼠标在UI界面内则禁用相机移动
+        if (Scene.TestUI())
+        {
+            return;
+        }
         //鼠标右键旋转功能
         if (Input.GetMouseButton(1))
         {

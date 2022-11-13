@@ -44,8 +44,10 @@
      <Compile Include="Assets\Scripts\AssetBehavior\AssetLoadBehaviorManager.cs" />
      <Compile Include="Assets\Scripts\Tools\LanguageMgr.cs" />
      <Compile Include="Assets\Scripts\Tools\UnityTool.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\UI\CubeBehavior.cs" />
      <Compile Include="Assets\Frame\View\UIMaskMgr.cs" />
      <Compile Include="Assets\Scripts\Test\TestView.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\FastBuildingStart.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\MaterialPath.cs" />
      <Compile Include="Assets\Frame\Model\FMAction.cs" />
      <Compile Include="Assets\Frame\Ctrl\BaseMediator.cs" />
@@ -92,11 +94,13 @@
      <Compile Include="Assets\Frame\View\LuaUIBehavior.cs" />
      <Compile Include="Assets\Frame\View\UIWindows.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\FileAssetLoad.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\Import&amp;Export\Import.cs" />
      <Compile Include="Assets\Scripts\Tools\DisplayIconMgr.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Mirror\MirrorZ.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\BuildingMode\SphereMode.cs" />
      <Compile Include="Assets\Frame\View\UICanvas.cs" />
      <Compile Include="Assets\Frame\TestForm3.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\UI\CubeSelectView.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\MovingMode\RotateZ.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\CompConfig.cs" />
      <Compile Include="Assets\Scripts\AssetBehavior\CodeColliderManager.cs" />
@@ -111,7 +115,6 @@
      <Compile Include="Assets\Scripts\FastBuilding\Import&amp;Export\SaveData.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Mirror\MirrorY.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowGroundCollider.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\Import&amp;Export\Import.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
