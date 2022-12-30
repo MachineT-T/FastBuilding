@@ -178,6 +178,219 @@ public class Scene : MonoBehaviour
         return false;
     }
 
+    //修改长度
+    public static void editLength(int newLength)
+    {
+        //创建新的方块数组
+        GameObject[,,] newBlocks = new GameObject[newLength, height, wide];
+        bool[,,] newHavingBlocks = new bool[newLength, height, wide];
+        //如果新的长度比原长度大
+        if (newLength > length)
+        {
+            //将原方块数组复制到新方块数组中
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        newBlocks[i, j, k] = blocks[i, j, k];
+                        newHavingBlocks[i, j, k] = HavingBlocks[i, j, k];
+                    }
+                }
+            }
+            //设置多出来的部分没有方块
+            for (int i = length; i < newLength; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        newHavingBlocks[i, j, k] = false;
+                    }
+                }
+            }
+        }
+        //如果新的长度比原长度小
+        else if (newLength < length)
+        {
+            //将原方块数组复制到新方块数组中
+            for (int i = 0; i < newLength; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        newBlocks[i, j, k] = blocks[i, j, k];
+                        newHavingBlocks[i, j, k] = HavingBlocks[i, j, k];
+                    }
+                }
+            }
+            //销毁范围外的方块
+            for (int i = newLength; i < length; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        Destroy(blocks[i, j, k]);
+                    }
+                }
+            }
+        }
+        //如果长度不变
+        else
+        {
+            return;
+        }
+        //用新数组取代旧数组
+        blocks = newBlocks;
+        HavingBlocks = newHavingBlocks;
+        length = newLength;
+    }
+
+    //修改高度
+    public static void editHeight(int newHeight)
+    {
+        //创建新的方块数组
+        GameObject[,,] newBlocks = new GameObject[length, newHeight, wide];
+        bool[,,] newHavingBlocks = new bool[length, newHeight, wide];
+        //如果新的高度比原高度大
+        if (newHeight > height)
+        {
+            //将原方块数组复制到新方块数组中
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        newBlocks[i, j, k] = blocks[i, j, k];
+                        newHavingBlocks[i, j, k] = HavingBlocks[i, j, k];
+                    }
+                }
+            }
+            //设置多出来的部分没有方块
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = height; j < newHeight; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        newHavingBlocks[i, j, k] = false;
+                    }
+                }
+            }
+        }
+        //如果新的高度比原高度小
+        else if (newHeight < height)
+        {
+            //将原方块数组复制到新方块数组中
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = 0; j < newHeight; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        newBlocks[i, j, k] = blocks[i, j, k];
+                        newHavingBlocks[i, j, k] = HavingBlocks[i, j, k];
+                    }
+                }
+            }
+            //销毁范围外的方块
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = newHeight; j < height; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        Destroy(blocks[i, j, k]);
+                    }
+                }
+            }
+        }
+        //如果高度不变
+        else
+        {
+            return;
+        }
+        //用新数组取代旧数组
+        blocks = newBlocks;
+        HavingBlocks = newHavingBlocks;
+        height = newHeight;
+    }
+
+    //修改宽度
+    public static void editWide(int newWide)
+    {
+        //创建新的方块数组
+        GameObject[,,] newBlocks = new GameObject[length, height, newWide];
+        bool[,,] newHavingBlocks = new bool[length, height, newWide];
+        //如果新的宽度比原宽度大
+        if (newWide > wide)
+        {
+            //将原方块数组复制到新方块数组中
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = 0; k < wide; ++k)
+                    {
+                        newBlocks[i, j, k] = blocks[i, j, k];
+                        newHavingBlocks[i, j, k] = HavingBlocks[i, j, k];
+                    }
+                }
+            }
+            //设置多出来的部分没有方块
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = wide; k < newWide; ++k)
+                    {
+                        newHavingBlocks[i, j, k] = false;
+                    }
+                }
+            }
+        }
+        //如果新的宽度比原宽度小
+        else if (newWide < wide)
+        {
+            //将原方块数组复制到新方块数组中
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = 0; k < newWide; ++k)
+                    {
+                        newBlocks[i, j, k] = blocks[i, j, k];
+                        newHavingBlocks[i, j, k] = HavingBlocks[i, j, k];
+                    }
+                }
+            }
+            //销毁范围外的方块
+            for (int i = 0; i < length; ++i)
+            {
+                for (int j = 0; j < height; ++j)
+                {
+                    for (int k = newWide; k < wide; ++k)
+                    {
+                        Destroy(blocks[i, j, k]);
+                    }
+                }
+            }
+        }
+        //如果高度不变
+        else
+        {
+            return;
+        }
+        //用新数组取代旧数组
+        blocks = newBlocks;
+        HavingBlocks = newHavingBlocks;
+        wide = newWide;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
