@@ -56,7 +56,12 @@ public class Scene : MonoBehaviour
         }
 
         //复现导入的数据信息
+        Initialization.createPlane(data.length, data.wide, data.height);
+        Initialization.refresh();
         HavingBlocks = data.HavingBlocks;
+        length = data.length;
+        wide = data.wide;
+        height = data.height;
         for (int i = 0; i < length; i++)
         {
             for (int j = 0; j < height; j++)

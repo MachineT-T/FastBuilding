@@ -6,16 +6,24 @@ using UnityEngine.UI;
 
 public class Initialization : MonoBehaviour
 {
-    float length = 0, wide = 0, height = 0;//地面的长宽高
-    public InputField lengthInput, wideInput, heightInput;//长宽高输入框
-    GameObject[,] front, back, up, down, left, right;//地面GameObject
-    public Material mat;//地面材质
+    static float length = 0, wide = 0, height = 0;//地面的长宽高
+    public static InputField lengthInput, wideInput, heightInput;//长宽高输入框
+    static GameObject[,] front, back, up, down, left, right;//地面GameObject
+    public static Material mat;//地面材质
     void Start()
     {
+        //设置地面材质
+        mat = (Material)AssetDatabase.LoadAssetAtPath("Assets/Materials/Voxels/Items/mat_background.mat", typeof(Material));
+
         //默认创建长宽高为50的平面
         createPlane(50, 50, 50);
 
         Camera.main.transform.position = new Vector3(length / 2, height / 2, -wide * 1.5f);//将相机放置在场景的中间位置
+
+        //获取输入框对象
+        lengthInput = (InputField)GameObject.Find("length").GetComponent(typeof(InputField));
+        wideInput = (InputField)GameObject.Find("wide").GetComponent(typeof(InputField));
+        heightInput = (InputField)GameObject.Find("height").GetComponent(typeof(InputField));
 
         //将文本修改事件绑定
         lengthInput.onEndEdit.AddListener(delegate { editLength(); });
@@ -24,7 +32,7 @@ public class Initialization : MonoBehaviour
     }
 
     //创建地面Plane
-    public void createPlane(int x, int y, int z)
+    public static void createPlane(int x, int y, int z)
     {
         //销毁原地面Plane
         for (int i = 0; i < length; ++i)
@@ -215,5 +223,13 @@ public class Initialization : MonoBehaviour
         SelectBlock.ClearSelected();
         createPlane((int)length, (int)wide, int.Parse(heightInput.text));
         Scene.editHeight(int.Parse(heightInput.text));
+    }
+
+    //刷新长宽高信息
+    public static void refresh()
+    {
+        lengthInput.text = length.ToString();
+        wideInput.text = wide.ToString();
+        heightInput.text = height.ToString();
     }
 }
