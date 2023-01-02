@@ -12,6 +12,10 @@ public class CubeSelectView : MonoBehaviour
     public Button btnCol;
     public GameObject cubePref;
     public Transform content;
+    //是否正在等待选择
+    public static bool waitForSelect = false;
+    //是否已经选择
+    public static bool selected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +48,15 @@ public class CubeSelectView : MonoBehaviour
         btnCol.transform.Find("Select").gameObject.SetActive(false);
     }
 
+    void Update()
+    {
+        //如果不在等待则复原选择判断
+        if (!waitForSelect)
+        {
+            selected = false;
+        }
+    }
+
     private void onSelectCube(string selectCube)
     {
         if (selectCube.Replace("Cube_", "") == currentCube) return;
@@ -56,6 +69,11 @@ public class CubeSelectView : MonoBehaviour
             if (cubeBehavior.cubeObj.name == selectCube)
             {
                 BuildMode.setMat(ResLibaryMgr.Instance.GetMatiral(currentCube));
+                //如果正在等待选择，则设置已选择
+                if (waitForSelect)
+                {
+                    selected = true;
+                }
             }
         }
     }

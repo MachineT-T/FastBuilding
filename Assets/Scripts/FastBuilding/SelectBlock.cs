@@ -71,6 +71,40 @@ public class SelectBlock : MonoBehaviour
         MoveMode.RecordBlockInitPos();
     }
 
+    //选择当前选中材质的所有方块
+    public static void SelectSameMaterial()
+    {
+        //获取场景中的方块信息
+        GameObject[,,] blocks = Scene.getBlocks();
+        //更换选择的方块时需要先确定选中方块的移动
+        MoveMode.ConfirmMoving();
+        //先清空选择列表
+        ClearSelected();
+        //遍历场景中所有方块
+        for (int i = 0; i < Scene.length; i++)
+        {
+            for (int j = 0; j < Scene.height; j++)
+            {
+                for (int k = 0; k < Scene.wide; k++)
+                {
+                    if (Scene.TestBlocks(i, j, k))
+                    {
+                        //如果该位置方块材质与选中的材质相同
+                        if (blocks[i, j, k].GetComponent<MaterialPath>().MatPath == AssetDatabase.GetAssetPath(BuildMode.mat))
+                        {
+                            //将方块添加进选择列表中
+                            selected.Add(blocks[i, j, k]);
+                            //为选中的方块画线
+                            blocks[i, j, k].AddComponent<ShowBoxCollider>();
+                        }
+                    }
+                }
+            }
+        }
+        //记录选中方块的初始位置
+        MoveMode.RecordBlockInitPos();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
