@@ -13,13 +13,15 @@ public class Scene : MonoBehaviour
     static bool[,,] HavingBlocks;
 
     //模式类型
-    public enum Mode { rectangle, sphere, line, cylinder, pyramid, select, AddSelect, SubSelect, move };
+    public enum Mode { rectangle, sphere, line, cylinder, pyramid, select, AddSelect, SubSelect, PickColor, move };
 
     //判断是否在选定对称轴的状态
     public static bool SelectingAxis = false;
 
     //当前模式
     public static Mode mode = Mode.rectangle;
+    //原模式
+    public static Mode lastMode;
 
     //鼠标是否在UI中
     static bool IsInUI = false;
@@ -165,6 +167,21 @@ public class Scene : MonoBehaviour
     public static void ToSubSelectMode()
     {
         mode = Mode.SubSelect;
+    }
+
+    //转化为吸附模式
+    public static void ToPickColorMode()
+    {
+        //记录当前模式
+        lastMode = mode;
+        //转化模式
+        mode = Mode.PickColor;
+    }
+
+    //恢复原模式
+    public static void ReturnLastMode()
+    {
+        mode = lastMode;
     }
 
     //转换为移动模式

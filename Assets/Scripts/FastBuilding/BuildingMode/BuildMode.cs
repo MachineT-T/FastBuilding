@@ -179,6 +179,22 @@ public class BuildMode : MonoBehaviour
         MoveMode.RecordBlockInitPos();
     }
 
+    //替换选中方块的材质
+    public static void changeMaterial()
+    {
+        //获取选中的方块列表的引用
+        ArrayList selected = SelectBlock.getSelected();
+        for (int i = 0; i < selected.Count; ++i)
+        {
+            //取出方块对象
+            GameObject obj = (GameObject)selected[i];
+            //设置方块材质
+            obj.GetComponent<Renderer>().material = mat;
+            //在脚本中保存材质路径
+            obj.GetComponent<MaterialPath>().MatPath = AssetDatabase.GetAssetPath(mat);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -68,7 +68,6 @@
      <Compile Include="Assets\Scripts\FastBuilding\Initialization.cs" />
      <Compile Include="Assets\Frame\View\UIType.cs" />
      <Compile Include="Assets\Scripts\Test\TestMediator.cs" />
-     <Compile Include="Assets\Scripts\FastBuilding\AddBlock.cs" />
      <Compile Include="Assets\Scripts\Tools\DisplayConfig.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\SelectingMode\SelectMode.cs" />
      <Compile Include="Assets\Frame\Ctrl\MediatorManager.cs" />
@@ -115,6 +114,7 @@
      <Compile Include="Assets\Scripts\FastBuilding\Import&amp;Export\SaveData.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Mirror\MirrorY.cs" />
      <Compile Include="Assets\Scripts\FastBuilding\Collider\ShowGroundCollider.cs" />
+     <Compile Include="Assets\Scripts\FastBuilding\PickColor.cs" />
      <None Include="Assets\Scripts\Map\VR_ChuangKe_Share.Map.Mb.dll.CodeAnalysisLog.xml" />
     <Reference Include="UnityEngine">
         <HintPath>G:\Untiy\2020.3.27f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
