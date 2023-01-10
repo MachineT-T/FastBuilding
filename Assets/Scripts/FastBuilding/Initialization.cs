@@ -195,6 +195,13 @@ public class Initialization : MonoBehaviour
     //编辑长度
     private void editLength()
     {
+        //如果输入内容小于等于0则弹出报错信息
+        if (int.Parse(lengthInput.text) <= 0)
+        {
+            EditorUtility.DisplayDialog("输入格式错误", "输入值应大于等于1", "确认");
+            //恢复输入框内容
+            lengthInput.text = length.ToString();
+        }
         //确定选中方块的移动
         MoveMode.ConfirmMoving();
         //清空选择列表
@@ -206,6 +213,13 @@ public class Initialization : MonoBehaviour
     //编辑宽度
     private void editWide()
     {
+        //如果输入内容小于等于0则弹出报错信息
+        if (int.Parse(wideInput.text) <= 0)
+        {
+            EditorUtility.DisplayDialog("输入格式错误", "输入值应大于等于1", "确认");
+            //恢复输入框内容
+            wideInput.text = wide.ToString();
+        }
         //确定选中方块的移动
         MoveMode.ConfirmMoving();
         //清空选择列表
@@ -217,6 +231,13 @@ public class Initialization : MonoBehaviour
     //编辑高度
     private void editHeight()
     {
+        //如果输入内容小于等于0则弹出报错信息
+        if (int.Parse(heightInput.text) <= 0)
+        {
+            EditorUtility.DisplayDialog("输入格式错误", "输入值应大于等于1", "确认");
+            //恢复输入框内容
+            heightInput.text = height.ToString();
+        }
         //确定选中方块的移动
         MoveMode.ConfirmMoving();
         //清空选择列表
